@@ -1,7 +1,6 @@
 .gitignore
 .php-cs-fixer.dist.php
 .travis.yml
-README.md
 docs/Api/AnalysisApi.md
 docs/Api/DefaultApi.md
 docs/Api/ForecastingApi.md
