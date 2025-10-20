@@ -1,0 +1,39 @@
+{
+    "name": "forecastapi/php-sdk",
+    "version": "1.0.7",
+    "description": "Time series forecasting service with multiple algorithms and automatic method selection",
+    "keywords": [
+        "forecasting",
+        "time-series",
+        "openapi",
+        "api",
+        "prediction"
+    ],
+    "homepage": "https://forecastapi.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ForecastAPI",
+            "homepage": "https://forecastapi.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^7.0",
+        "guzzlehttp/psr7": "^1.7 || ^2.0"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "phpunit/phpunit": "^8.0 || ^9.0",
+        "friendsofphp/php-cs-fixer": "^3.5"
+    },
+    "autoload": {
+        "psr-4": { "ForecastAPI\\ForecastSDK\\" : "lib/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "ForecastAPI\\ForecastSDK\\Test\\" : "test/" }
+    }
+}
