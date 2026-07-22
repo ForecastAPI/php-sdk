@@ -1,5 +1,6 @@
 {
     "name": "forecastapi/php-sdk",
+    "version": "2.1.0",
     "description": "Time series forecasting service with multiple algorithms and automatic method selection",
     "keywords": [
         "openapitools",
