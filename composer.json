@@ -1,5 +1,5 @@
 {
-    "name": "alvarez01337/php-sdk",
+    "name": "forecastapi/php-sdk",
     "description": "Time series forecasting service with multiple algorithms and automatic method selection",
     "keywords": [
         "openapitools",
