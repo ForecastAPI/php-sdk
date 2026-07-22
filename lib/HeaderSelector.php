@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,13 +26,13 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK;
+namespace ForecastAPI\Sdk;
 
 /**
  * HeaderSelector Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

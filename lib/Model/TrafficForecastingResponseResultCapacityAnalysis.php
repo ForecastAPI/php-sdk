@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Model;
+namespace ForecastAPI\Sdk\Model;
 
 use \ArrayAccess;
-use \ForecastAPI\ForecastSDK\ObjectSerializer;
+use \ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * TrafficForecastingResponseResultCapacityAnalysis Class Doc Comment
  *
  * @category Class
  * @description Detailed capacity utilization analysis
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -60,7 +60,7 @@ class TrafficForecastingResponseResultCapacityAnalysis implements ModelInterface
       */
     protected static $openAPITypes = [
         'current_capacity' => 'float',
-        'utilization_periods' => '\ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultCapacityAnalysisUtilizationPeriodsInner[]',
+        'utilization_periods' => '\ForecastAPI\Sdk\Model\TrafficForecastingResponseResultCapacityAnalysisUtilizationPeriodsInner[]',
         'over_capacity_periods' => 'int',
         'critical_periods' => 'int',
         'forecast_duration_minutes' => 'int',
@@ -363,7 +363,7 @@ class TrafficForecastingResponseResultCapacityAnalysis implements ModelInterface
     /**
      * Gets utilization_periods
      *
-     * @return \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultCapacityAnalysisUtilizationPeriodsInner[]|null
+     * @return \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultCapacityAnalysisUtilizationPeriodsInner[]|null
      */
     public function getUtilizationPeriods()
     {
@@ -373,7 +373,7 @@ class TrafficForecastingResponseResultCapacityAnalysis implements ModelInterface
     /**
      * Sets utilization_periods
      *
-     * @param \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultCapacityAnalysisUtilizationPeriodsInner[]|null $utilization_periods Capacity utilization for each forecast period
+     * @param \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultCapacityAnalysisUtilizationPeriodsInner[]|null $utilization_periods Capacity utilization for each forecast period
      *
      * @return self
      */

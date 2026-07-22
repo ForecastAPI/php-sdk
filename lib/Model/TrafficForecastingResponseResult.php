@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Model;
+namespace ForecastAPI\Sdk\Model;
 
 use \ArrayAccess;
-use \ForecastAPI\ForecastSDK\ObjectSerializer;
+use \ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * TrafficForecastingResponseResult Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,11 +61,11 @@ class TrafficForecastingResponseResult implements ModelInterface, ArrayAccess, \
         'metric' => 'string',
         'current_capacity' => 'float',
         'baseline_traffic' => 'float',
-        'scaling_recommendations' => '\ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultScalingRecommendations',
-        'capacity_analysis' => '\ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultCapacityAnalysis',
-        'traffic_alerts' => '\ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultTrafficAlerts',
-        'cost_optimization' => '\ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultCostOptimization',
-        'forecast_data' => '\ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultForecastDataInner[]'
+        'scaling_recommendations' => '\ForecastAPI\Sdk\Model\TrafficForecastingResponseResultScalingRecommendations',
+        'capacity_analysis' => '\ForecastAPI\Sdk\Model\TrafficForecastingResponseResultCapacityAnalysis',
+        'traffic_alerts' => '\ForecastAPI\Sdk\Model\TrafficForecastingResponseResultTrafficAlerts',
+        'cost_optimization' => '\ForecastAPI\Sdk\Model\TrafficForecastingResponseResultCostOptimization',
+        'forecast_data' => '\ForecastAPI\Sdk\Model\TrafficForecastingResponseResultForecastDataInner[]'
     ];
 
     /**
@@ -423,7 +423,7 @@ class TrafficForecastingResponseResult implements ModelInterface, ArrayAccess, \
     /**
      * Gets scaling_recommendations
      *
-     * @return \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultScalingRecommendations|null
+     * @return \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultScalingRecommendations|null
      */
     public function getScalingRecommendations()
     {
@@ -433,7 +433,7 @@ class TrafficForecastingResponseResult implements ModelInterface, ArrayAccess, \
     /**
      * Sets scaling_recommendations
      *
-     * @param \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultScalingRecommendations|null $scaling_recommendations scaling_recommendations
+     * @param \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultScalingRecommendations|null $scaling_recommendations scaling_recommendations
      *
      * @return self
      */
@@ -450,7 +450,7 @@ class TrafficForecastingResponseResult implements ModelInterface, ArrayAccess, \
     /**
      * Gets capacity_analysis
      *
-     * @return \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultCapacityAnalysis|null
+     * @return \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultCapacityAnalysis|null
      */
     public function getCapacityAnalysis()
     {
@@ -460,7 +460,7 @@ class TrafficForecastingResponseResult implements ModelInterface, ArrayAccess, \
     /**
      * Sets capacity_analysis
      *
-     * @param \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultCapacityAnalysis|null $capacity_analysis capacity_analysis
+     * @param \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultCapacityAnalysis|null $capacity_analysis capacity_analysis
      *
      * @return self
      */
@@ -477,7 +477,7 @@ class TrafficForecastingResponseResult implements ModelInterface, ArrayAccess, \
     /**
      * Gets traffic_alerts
      *
-     * @return \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultTrafficAlerts|null
+     * @return \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultTrafficAlerts|null
      */
     public function getTrafficAlerts()
     {
@@ -487,7 +487,7 @@ class TrafficForecastingResponseResult implements ModelInterface, ArrayAccess, \
     /**
      * Sets traffic_alerts
      *
-     * @param \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultTrafficAlerts|null $traffic_alerts traffic_alerts
+     * @param \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultTrafficAlerts|null $traffic_alerts traffic_alerts
      *
      * @return self
      */
@@ -504,7 +504,7 @@ class TrafficForecastingResponseResult implements ModelInterface, ArrayAccess, \
     /**
      * Gets cost_optimization
      *
-     * @return \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultCostOptimization|null
+     * @return \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultCostOptimization|null
      */
     public function getCostOptimization()
     {
@@ -514,7 +514,7 @@ class TrafficForecastingResponseResult implements ModelInterface, ArrayAccess, \
     /**
      * Sets cost_optimization
      *
-     * @param \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultCostOptimization|null $cost_optimization cost_optimization
+     * @param \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultCostOptimization|null $cost_optimization cost_optimization
      *
      * @return self
      */
@@ -531,7 +531,7 @@ class TrafficForecastingResponseResult implements ModelInterface, ArrayAccess, \
     /**
      * Gets forecast_data
      *
-     * @return \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultForecastDataInner[]|null
+     * @return \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultForecastDataInner[]|null
      */
     public function getForecastData()
     {
@@ -541,7 +541,7 @@ class TrafficForecastingResponseResult implements ModelInterface, ArrayAccess, \
     /**
      * Sets forecast_data
      *
-     * @param \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultForecastDataInner[]|null $forecast_data Underlying forecast data used for analysis
+     * @param \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultForecastDataInner[]|null $forecast_data Underlying forecast data used for analysis
      *
      * @return self
      */

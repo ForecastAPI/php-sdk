@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Model;
+namespace ForecastAPI\Sdk\Model;
 
 use \ArrayAccess;
-use \ForecastAPI\ForecastSDK\ObjectSerializer;
+use \ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * TrafficForecastingResponseResultTrafficAlerts Class Doc Comment
  *
  * @category Class
  * @description Traffic spike and anomaly alerts
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,7 +62,7 @@ class TrafficForecastingResponseResultTrafficAlerts implements ModelInterface, A
         'total_alerts' => 'int',
         'high_severity' => 'int',
         'medium_severity' => 'int',
-        'alerts' => '\ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultTrafficAlertsAlertsInner[]'
+        'alerts' => '\ForecastAPI\Sdk\Model\TrafficForecastingResponseResultTrafficAlertsAlertsInner[]'
     ];
 
     /**
@@ -396,7 +396,7 @@ class TrafficForecastingResponseResultTrafficAlerts implements ModelInterface, A
     /**
      * Gets alerts
      *
-     * @return \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultTrafficAlertsAlertsInner[]|null
+     * @return \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultTrafficAlertsAlertsInner[]|null
      */
     public function getAlerts()
     {
@@ -406,7 +406,7 @@ class TrafficForecastingResponseResultTrafficAlerts implements ModelInterface, A
     /**
      * Sets alerts
      *
-     * @param \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultTrafficAlertsAlertsInner[]|null $alerts Individual alert details
+     * @param \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultTrafficAlertsAlertsInner[]|null $alerts Individual alert details
      *
      * @return self
      */

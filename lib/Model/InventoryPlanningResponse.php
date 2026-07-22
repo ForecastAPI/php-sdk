@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Model;
+namespace ForecastAPI\Sdk\Model;
 
 use \ArrayAccess;
-use \ForecastAPI\ForecastSDK\ObjectSerializer;
+use \ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * InventoryPlanningResponse Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class InventoryPlanningResponse implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\ForecastAPI\ForecastSDK\Model\InventoryPlanningResponseResult',
-        'meta' => '\ForecastAPI\ForecastSDK\Model\InventoryPlanningResponseMeta'
+        'result' => '\ForecastAPI\Sdk\Model\InventoryPlanningResponseResult',
+        'meta' => '\ForecastAPI\Sdk\Model\InventoryPlanningResponseMeta'
     ];
 
     /**
@@ -300,7 +300,7 @@ class InventoryPlanningResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets result
      *
-     * @return \ForecastAPI\ForecastSDK\Model\InventoryPlanningResponseResult|null
+     * @return \ForecastAPI\Sdk\Model\InventoryPlanningResponseResult|null
      */
     public function getResult()
     {
@@ -310,7 +310,7 @@ class InventoryPlanningResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets result
      *
-     * @param \ForecastAPI\ForecastSDK\Model\InventoryPlanningResponseResult|null $result result
+     * @param \ForecastAPI\Sdk\Model\InventoryPlanningResponseResult|null $result result
      *
      * @return self
      */
@@ -327,7 +327,7 @@ class InventoryPlanningResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets meta
      *
-     * @return \ForecastAPI\ForecastSDK\Model\InventoryPlanningResponseMeta|null
+     * @return \ForecastAPI\Sdk\Model\InventoryPlanningResponseMeta|null
      */
     public function getMeta()
     {
@@ -337,7 +337,7 @@ class InventoryPlanningResponse implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets meta
      *
-     * @param \ForecastAPI\ForecastSDK\Model\InventoryPlanningResponseMeta|null $meta meta
+     * @param \ForecastAPI\Sdk\Model\InventoryPlanningResponseMeta|null $meta meta
      *
      * @return self
      */

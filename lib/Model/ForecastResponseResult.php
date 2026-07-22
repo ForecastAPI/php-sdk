@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Model;
+namespace ForecastAPI\Sdk\Model;
 
 use \ArrayAccess;
-use \ForecastAPI\ForecastSDK\ObjectSerializer;
+use \ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * ForecastResponseResult Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @description The baseline forecast — the only path that is stored and accuracy-tracked
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,12 +59,10 @@ class ForecastResponseResult implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'forecast_value' => 'float',
-        'confidence_lower' => 'float',
-        'confidence_upper' => 'float',
-        'method_used' => 'string',
-        'forecast_dates' => '\DateTime[]',
-        'forecast_values' => 'float[]'
+        'identifier' => 'string',
+        'tenant_context' => 'string',
+        'forecasts' => '\ForecastAPI\Sdk\Model\ForecastPeriod[]',
+        'model_info' => 'array<string,mixed>'
     ];
 
     /**
@@ -74,12 +73,10 @@ class ForecastResponseResult implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'forecast_value' => null,
-        'confidence_lower' => null,
-        'confidence_upper' => null,
-        'method_used' => null,
-        'forecast_dates' => 'date',
-        'forecast_values' => null
+        'identifier' => null,
+        'tenant_context' => null,
+        'forecasts' => null,
+        'model_info' => null
     ];
 
     /**
@@ -88,12 +85,10 @@ class ForecastResponseResult implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'forecast_value' => false,
-        'confidence_lower' => false,
-        'confidence_upper' => false,
-        'method_used' => false,
-        'forecast_dates' => false,
-        'forecast_values' => false
+        'identifier' => false,
+        'tenant_context' => true,
+        'forecasts' => false,
+        'model_info' => false
     ];
 
     /**
@@ -182,12 +177,10 @@ class ForecastResponseResult implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'forecast_value' => 'forecast_value',
-        'confidence_lower' => 'confidence_lower',
-        'confidence_upper' => 'confidence_upper',
-        'method_used' => 'method_used',
-        'forecast_dates' => 'forecast_dates',
-        'forecast_values' => 'forecast_values'
+        'identifier' => 'identifier',
+        'tenant_context' => 'tenant_context',
+        'forecasts' => 'forecasts',
+        'model_info' => 'model_info'
     ];
 
     /**
@@ -196,12 +189,10 @@ class ForecastResponseResult implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'forecast_value' => 'setForecastValue',
-        'confidence_lower' => 'setConfidenceLower',
-        'confidence_upper' => 'setConfidenceUpper',
-        'method_used' => 'setMethodUsed',
-        'forecast_dates' => 'setForecastDates',
-        'forecast_values' => 'setForecastValues'
+        'identifier' => 'setIdentifier',
+        'tenant_context' => 'setTenantContext',
+        'forecasts' => 'setForecasts',
+        'model_info' => 'setModelInfo'
     ];
 
     /**
@@ -210,12 +201,10 @@ class ForecastResponseResult implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'forecast_value' => 'getForecastValue',
-        'confidence_lower' => 'getConfidenceLower',
-        'confidence_upper' => 'getConfidenceUpper',
-        'method_used' => 'getMethodUsed',
-        'forecast_dates' => 'getForecastDates',
-        'forecast_values' => 'getForecastValues'
+        'identifier' => 'getIdentifier',
+        'tenant_context' => 'getTenantContext',
+        'forecasts' => 'getForecasts',
+        'model_info' => 'getModelInfo'
     ];
 
     /**
@@ -275,12 +264,10 @@ class ForecastResponseResult implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('forecast_value', $data ?? [], null);
-        $this->setIfExists('confidence_lower', $data ?? [], null);
-        $this->setIfExists('confidence_upper', $data ?? [], null);
-        $this->setIfExists('method_used', $data ?? [], null);
-        $this->setIfExists('forecast_dates', $data ?? [], null);
-        $this->setIfExists('forecast_values', $data ?? [], null);
+        $this->setIfExists('identifier', $data ?? [], null);
+        $this->setIfExists('tenant_context', $data ?? [], null);
+        $this->setIfExists('forecasts', $data ?? [], null);
+        $this->setIfExists('model_info', $data ?? [], null);
     }
 
     /**
@@ -326,163 +313,116 @@ class ForecastResponseResult implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets forecast_value
-     *
-     * @return float|null
-     */
-    public function getForecastValue()
-    {
-        return $this->container['forecast_value'];
-    }
-
-    /**
-     * Sets forecast_value
-     *
-     * @param float|null $forecast_value forecast_value
-     *
-     * @return self
-     */
-    public function setForecastValue($forecast_value)
-    {
-        if (is_null($forecast_value)) {
-            throw new \InvalidArgumentException('non-nullable forecast_value cannot be null');
-        }
-        $this->container['forecast_value'] = $forecast_value;
-
-        return $this;
-    }
-
-    /**
-     * Gets confidence_lower
-     *
-     * @return float|null
-     */
-    public function getConfidenceLower()
-    {
-        return $this->container['confidence_lower'];
-    }
-
-    /**
-     * Sets confidence_lower
-     *
-     * @param float|null $confidence_lower confidence_lower
-     *
-     * @return self
-     */
-    public function setConfidenceLower($confidence_lower)
-    {
-        if (is_null($confidence_lower)) {
-            throw new \InvalidArgumentException('non-nullable confidence_lower cannot be null');
-        }
-        $this->container['confidence_lower'] = $confidence_lower;
-
-        return $this;
-    }
-
-    /**
-     * Gets confidence_upper
-     *
-     * @return float|null
-     */
-    public function getConfidenceUpper()
-    {
-        return $this->container['confidence_upper'];
-    }
-
-    /**
-     * Sets confidence_upper
-     *
-     * @param float|null $confidence_upper confidence_upper
-     *
-     * @return self
-     */
-    public function setConfidenceUpper($confidence_upper)
-    {
-        if (is_null($confidence_upper)) {
-            throw new \InvalidArgumentException('non-nullable confidence_upper cannot be null');
-        }
-        $this->container['confidence_upper'] = $confidence_upper;
-
-        return $this;
-    }
-
-    /**
-     * Gets method_used
+     * Gets identifier
      *
      * @return string|null
      */
-    public function getMethodUsed()
+    public function getIdentifier()
     {
-        return $this->container['method_used'];
+        return $this->container['identifier'];
     }
 
     /**
-     * Sets method_used
+     * Sets identifier
      *
-     * @param string|null $method_used method_used
+     * @param string|null $identifier Echoes the series identifier from the request
      *
      * @return self
      */
-    public function setMethodUsed($method_used)
+    public function setIdentifier($identifier)
     {
-        if (is_null($method_used)) {
-            throw new \InvalidArgumentException('non-nullable method_used cannot be null');
+        if (is_null($identifier)) {
+            throw new \InvalidArgumentException('non-nullable identifier cannot be null');
         }
-        $this->container['method_used'] = $method_used;
+        $this->container['identifier'] = $identifier;
 
         return $this;
     }
 
     /**
-     * Gets forecast_dates
+     * Gets tenant_context
      *
-     * @return \DateTime[]|null
+     * @return string|null
      */
-    public function getForecastDates()
+    public function getTenantContext()
     {
-        return $this->container['forecast_dates'];
+        return $this->container['tenant_context'];
     }
 
     /**
-     * Sets forecast_dates
+     * Sets tenant_context
      *
-     * @param \DateTime[]|null $forecast_dates forecast_dates
+     * @param string|null $tenant_context tenant_context
      *
      * @return self
      */
-    public function setForecastDates($forecast_dates)
+    public function setTenantContext($tenant_context)
     {
-        if (is_null($forecast_dates)) {
-            throw new \InvalidArgumentException('non-nullable forecast_dates cannot be null');
+        if (is_null($tenant_context)) {
+            array_push($this->openAPINullablesSetToNull, 'tenant_context');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('tenant_context', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['forecast_dates'] = $forecast_dates;
+        $this->container['tenant_context'] = $tenant_context;
 
         return $this;
     }
 
     /**
-     * Gets forecast_values
+     * Gets forecasts
      *
-     * @return float[]|null
+     * @return \ForecastAPI\Sdk\Model\ForecastPeriod[]|null
      */
-    public function getForecastValues()
+    public function getForecasts()
     {
-        return $this->container['forecast_values'];
+        return $this->container['forecasts'];
     }
 
     /**
-     * Sets forecast_values
+     * Sets forecasts
      *
-     * @param float[]|null $forecast_values forecast_values
+     * @param \ForecastAPI\Sdk\Model\ForecastPeriod[]|null $forecasts One row per forecast period. Each period carries its own bounds, and they widen with horizon.
      *
      * @return self
      */
-    public function setForecastValues($forecast_values)
+    public function setForecasts($forecasts)
     {
-        if (is_null($forecast_values)) {
-            throw new \InvalidArgumentException('non-nullable forecast_values cannot be null');
+        if (is_null($forecasts)) {
+            throw new \InvalidArgumentException('non-nullable forecasts cannot be null');
         }
-        $this->container['forecast_values'] = $forecast_values;
+        $this->container['forecasts'] = $forecasts;
+
+        return $this;
+    }
+
+    /**
+     * Gets model_info
+     *
+     * @return array<string,mixed>|null
+     */
+    public function getModelInfo()
+    {
+        return $this->container['model_info'];
+    }
+
+    /**
+     * Sets model_info
+     *
+     * @param array<string,mixed>|null $model_info The selected model (`best_model`), the models evaluated, the interval source, and per-model back-testing scores (smape/mape/mase) when validation runs. Also carries `bounds_transform` when `value_bounds` was sent, and `quantile_levels` when a fan was requested.
+     *
+     * @return self
+     */
+    public function setModelInfo($model_info)
+    {
+        if (is_null($model_info)) {
+            throw new \InvalidArgumentException('non-nullable model_info cannot be null');
+        }
+        $this->container['model_info'] = $model_info;
 
         return $this;
     }

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Model;
+namespace ForecastAPI\Sdk\Model;
 
 use \ArrayAccess;
-use \ForecastAPI\ForecastSDK\ObjectSerializer;
+use \ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * ForecastRequest Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,11 +59,19 @@ class ForecastRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'identifier' => 'string',
+        'tenant_context' => 'string',
         'frequency' => 'string',
         'start_date' => '\DateTime',
         'data_type' => 'string',
         'periods' => 'int',
-        'data' => '\ForecastAPI\ForecastSDK\Model\ForecastRequestDataInner[]'
+        'model' => 'string',
+        'confidence_level' => 'float',
+        'quantiles' => 'float[]',
+        'value_bounds' => '\ForecastAPI\Sdk\Model\ValueBounds',
+        'adjustments' => '\ForecastAPI\Sdk\Model\AdjustmentsInner[]',
+        'accumulate' => '\ForecastAPI\Sdk\Model\AccumulateOptions',
+        'selection_metric' => 'string',
+        'data' => '\ForecastAPI\Sdk\Model\ForecastRequestDataInner[]'
     ];
 
     /**
@@ -75,10 +83,18 @@ class ForecastRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'identifier' => null,
+        'tenant_context' => null,
         'frequency' => null,
         'start_date' => 'date',
         'data_type' => null,
         'periods' => null,
+        'model' => null,
+        'confidence_level' => null,
+        'quantiles' => null,
+        'value_bounds' => null,
+        'adjustments' => null,
+        'accumulate' => null,
+        'selection_metric' => null,
         'data' => null
     ];
 
@@ -89,10 +105,18 @@ class ForecastRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'identifier' => false,
+        'tenant_context' => true,
         'frequency' => false,
         'start_date' => true,
         'data_type' => false,
         'periods' => false,
+        'model' => false,
+        'confidence_level' => false,
+        'quantiles' => false,
+        'value_bounds' => false,
+        'adjustments' => false,
+        'accumulate' => false,
+        'selection_metric' => true,
         'data' => false
     ];
 
@@ -183,10 +207,18 @@ class ForecastRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'identifier' => 'identifier',
+        'tenant_context' => 'tenant_context',
         'frequency' => 'frequency',
         'start_date' => 'start_date',
         'data_type' => 'data_type',
         'periods' => 'periods',
+        'model' => 'model',
+        'confidence_level' => 'confidence_level',
+        'quantiles' => 'quantiles',
+        'value_bounds' => 'value_bounds',
+        'adjustments' => 'adjustments',
+        'accumulate' => 'accumulate',
+        'selection_metric' => 'selection_metric',
         'data' => 'data'
     ];
 
@@ -197,10 +229,18 @@ class ForecastRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'identifier' => 'setIdentifier',
+        'tenant_context' => 'setTenantContext',
         'frequency' => 'setFrequency',
         'start_date' => 'setStartDate',
         'data_type' => 'setDataType',
         'periods' => 'setPeriods',
+        'model' => 'setModel',
+        'confidence_level' => 'setConfidenceLevel',
+        'quantiles' => 'setQuantiles',
+        'value_bounds' => 'setValueBounds',
+        'adjustments' => 'setAdjustments',
+        'accumulate' => 'setAccumulate',
+        'selection_metric' => 'setSelectionMetric',
         'data' => 'setData'
     ];
 
@@ -211,10 +251,18 @@ class ForecastRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'identifier' => 'getIdentifier',
+        'tenant_context' => 'getTenantContext',
         'frequency' => 'getFrequency',
         'start_date' => 'getStartDate',
         'data_type' => 'getDataType',
         'periods' => 'getPeriods',
+        'model' => 'getModel',
+        'confidence_level' => 'getConfidenceLevel',
+        'quantiles' => 'getQuantiles',
+        'value_bounds' => 'getValueBounds',
+        'adjustments' => 'getAdjustments',
+        'accumulate' => 'getAccumulate',
+        'selection_metric' => 'getSelectionMetric',
         'data' => 'getData'
     ];
 
@@ -259,6 +307,7 @@ class ForecastRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const FREQUENCY_H = 'H';
     public const FREQUENCY_D = 'D';
     public const FREQUENCY_W = 'W';
     public const FREQUENCY_M = 'M';
@@ -266,6 +315,24 @@ class ForecastRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     public const FREQUENCY_ME = 'ME';
     public const FREQUENCY_Q = 'Q';
     public const FREQUENCY_Y = 'Y';
+    public const MODEL_STANDARD = 'standard';
+    public const MODEL_ADVANCED = 'advanced';
+    public const MODEL_ADVANCED_QUANTIZED = 'advanced-quantized';
+    public const MODEL_ADVANCED_PATCHED = 'advanced-patched';
+    public const MODEL_ENSEMBLE = 'ensemble';
+    public const QUANTILES_NUMBER_0_DOT_1 = 0.1;
+    public const QUANTILES_NUMBER_0_DOT_2 = 0.2;
+    public const QUANTILES_NUMBER_0_DOT_3 = 0.3;
+    public const QUANTILES_NUMBER_0_DOT_4 = 0.4;
+    public const QUANTILES_NUMBER_0_DOT_5 = 0.5;
+    public const QUANTILES_NUMBER_0_DOT_6 = 0.6;
+    public const QUANTILES_NUMBER_0_DOT_7 = 0.7;
+    public const QUANTILES_NUMBER_0_DOT_8 = 0.8;
+    public const QUANTILES_NUMBER_0_DOT_9 = 0.9;
+    public const SELECTION_METRIC_AUTO = 'auto';
+    public const SELECTION_METRIC_COMBINED = 'combined';
+    public const SELECTION_METRIC_MASE = 'mase';
+    public const SELECTION_METRIC_SMAPE = 'smape';
 
     /**
      * Gets allowable values of the enum
@@ -275,6 +342,7 @@ class ForecastRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getFrequencyAllowableValues()
     {
         return [
+            self::FREQUENCY_H,
             self::FREQUENCY_D,
             self::FREQUENCY_W,
             self::FREQUENCY_M,
@@ -282,6 +350,57 @@ class ForecastRequest implements ModelInterface, ArrayAccess, \JsonSerializable
             self::FREQUENCY_ME,
             self::FREQUENCY_Q,
             self::FREQUENCY_Y,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getModelAllowableValues()
+    {
+        return [
+            self::MODEL_STANDARD,
+            self::MODEL_ADVANCED,
+            self::MODEL_ADVANCED_QUANTIZED,
+            self::MODEL_ADVANCED_PATCHED,
+            self::MODEL_ENSEMBLE,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getQuantilesAllowableValues()
+    {
+        return [
+            self::QUANTILES_NUMBER_0_DOT_1,
+            self::QUANTILES_NUMBER_0_DOT_2,
+            self::QUANTILES_NUMBER_0_DOT_3,
+            self::QUANTILES_NUMBER_0_DOT_4,
+            self::QUANTILES_NUMBER_0_DOT_5,
+            self::QUANTILES_NUMBER_0_DOT_6,
+            self::QUANTILES_NUMBER_0_DOT_7,
+            self::QUANTILES_NUMBER_0_DOT_8,
+            self::QUANTILES_NUMBER_0_DOT_9,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getSelectionMetricAllowableValues()
+    {
+        return [
+            self::SELECTION_METRIC_AUTO,
+            self::SELECTION_METRIC_COMBINED,
+            self::SELECTION_METRIC_MASE,
+            self::SELECTION_METRIC_SMAPE,
         ];
     }
 
@@ -301,10 +420,18 @@ class ForecastRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('identifier', $data ?? [], null);
+        $this->setIfExists('tenant_context', $data ?? [], null);
         $this->setIfExists('frequency', $data ?? [], null);
         $this->setIfExists('start_date', $data ?? [], null);
         $this->setIfExists('data_type', $data ?? [], null);
         $this->setIfExists('periods', $data ?? [], null);
+        $this->setIfExists('model', $data ?? [], 'standard');
+        $this->setIfExists('confidence_level', $data ?? [], 0.8);
+        $this->setIfExists('quantiles', $data ?? [], null);
+        $this->setIfExists('value_bounds', $data ?? [], null);
+        $this->setIfExists('adjustments', $data ?? [], null);
+        $this->setIfExists('accumulate', $data ?? [], null);
+        $this->setIfExists('selection_metric', $data ?? [], null);
         $this->setIfExists('data', $data ?? [], null);
     }
 
@@ -360,6 +487,48 @@ class ForecastRequest implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'periods', must be bigger than or equal to 1.";
         }
 
+        $allowedValues = $this->getModelAllowableValues();
+        if (!is_null($this->container['model']) && !in_array($this->container['model'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'model', must be one of '%s'",
+                $this->container['model'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if (!is_null($this->container['confidence_level']) && ($this->container['confidence_level'] > 0.99)) {
+            $invalidProperties[] = "invalid value for 'confidence_level', must be smaller than or equal to 0.99.";
+        }
+
+        if (!is_null($this->container['confidence_level']) && ($this->container['confidence_level'] < 0.1)) {
+            $invalidProperties[] = "invalid value for 'confidence_level', must be bigger than or equal to 0.1.";
+        }
+
+        if (!is_null($this->container['quantiles']) && (count($this->container['quantiles']) > 9)) {
+            $invalidProperties[] = "invalid value for 'quantiles', number of items must be less than or equal to 9.";
+        }
+
+        if (!is_null($this->container['quantiles']) && (count($this->container['quantiles']) < 1)) {
+            $invalidProperties[] = "invalid value for 'quantiles', number of items must be greater than or equal to 1.";
+        }
+
+        if (!is_null($this->container['adjustments']) && (count($this->container['adjustments']) > 20)) {
+            $invalidProperties[] = "invalid value for 'adjustments', number of items must be less than or equal to 20.";
+        }
+
+        if (!is_null($this->container['adjustments']) && (count($this->container['adjustments']) < 1)) {
+            $invalidProperties[] = "invalid value for 'adjustments', number of items must be greater than or equal to 1.";
+        }
+
+        $allowedValues = $this->getSelectionMetricAllowableValues();
+        if (!is_null($this->container['selection_metric']) && !in_array($this->container['selection_metric'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'selection_metric', must be one of '%s'",
+                $this->container['selection_metric'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         if ($this->container['data'] === null) {
             $invalidProperties[] = "'data' can't be null";
         }
@@ -410,6 +579,40 @@ class ForecastRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets tenant_context
+     *
+     * @return string|null
+     */
+    public function getTenantContext()
+    {
+        return $this->container['tenant_context'];
+    }
+
+    /**
+     * Sets tenant_context
+     *
+     * @param string|null $tenant_context Optional segmentation dimension. A series is identified by the pair identifier + tenant_context, so \"mrr\" on \"plan-pro\" and \"mrr\" on \"plan-free\" are two independent series, each with its own history and accuracy tracking. Despite the name it isn't only for multi-tenancy — use it for any slice: plan, region, store, channel, cohort, device type.
+     *
+     * @return self
+     */
+    public function setTenantContext($tenant_context)
+    {
+        if (is_null($tenant_context)) {
+            array_push($this->openAPINullablesSetToNull, 'tenant_context');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('tenant_context', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['tenant_context'] = $tenant_context;
+
+        return $this;
+    }
+
+    /**
      * Gets frequency
      *
      * @return string
@@ -422,7 +625,7 @@ class ForecastRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets frequency
      *
-     * @param string $frequency Data frequency: - D: Daily - W: Weekly - M: Monthly (end of month) - MS: Monthly (start of month) - ME: Monthly (end of month) - Q: Quarterly - Y: Yearly
+     * @param string $frequency Data frequency: - H: Hourly - D: Daily - W: Weekly - M: Monthly (end of month) - MS: Monthly (start of month) - ME: Monthly (end of month) - Q: Quarterly - Y: Yearly
      *
      * @return self
      */
@@ -540,9 +743,256 @@ class ForecastRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets model
+     *
+     * @return string|null
+     */
+    public function getModel()
+    {
+        return $this->container['model'];
+    }
+
+    /**
+     * Sets model
+     *
+     * @param string|null $model Which forecasting engine to use. The advanced variants and ensemble provide higher accuracy at a higher usage cost than standard.
+     *
+     * @return self
+     */
+    public function setModel($model)
+    {
+        if (is_null($model)) {
+            throw new \InvalidArgumentException('non-nullable model cannot be null');
+        }
+        $allowedValues = $this->getModelAllowableValues();
+        if (!in_array($model, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'model', must be one of '%s'",
+                    $model,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['model'] = $model;
+
+        return $this;
+    }
+
+    /**
+     * Gets confidence_level
+     *
+     * @return float|null
+     */
+    public function getConfidenceLevel()
+    {
+        return $this->container['confidence_level'];
+    }
+
+    /**
+     * Sets confidence_level
+     *
+     * @param float|null $confidence_level Confidence level for the prediction interval. Note that 0.80 is the widest band the foundation models (advanced-quantized, advanced-patched, ensemble) produce natively — for genuinely distinct levels beyond that, request a quantile fan via `quantiles` instead of repeating the call at several confidence levels.
+     *
+     * @return self
+     */
+    public function setConfidenceLevel($confidence_level)
+    {
+        if (is_null($confidence_level)) {
+            throw new \InvalidArgumentException('non-nullable confidence_level cannot be null');
+        }
+
+        if (($confidence_level > 0.99)) {
+            throw new \InvalidArgumentException('invalid value for $confidence_level when calling ForecastRequest., must be smaller than or equal to 0.99.');
+        }
+        if (($confidence_level < 0.1)) {
+            throw new \InvalidArgumentException('invalid value for $confidence_level when calling ForecastRequest., must be bigger than or equal to 0.1.');
+        }
+
+        $this->container['confidence_level'] = $confidence_level;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantiles
+     *
+     * @return float[]|null
+     */
+    public function getQuantiles()
+    {
+        return $this->container['quantiles'];
+    }
+
+    /**
+     * Sets quantiles
+     *
+     * @param float[]|null $quantiles Decile levels to return per period — only deciles between 0.1 and 0.9 are accepted, because those are the levels every backend produces natively; anything finer would be interpolation served under a label the model never predicted. Adds a `quantiles` object to each forecast row alongside the usual bounds. Honoured by /v2/forecast and /v2/batch/forecast (request-level default or per-series override); rejected on grouped forecasts; ignored by other endpoints sharing this request shape.
+     *
+     * @return self
+     */
+    public function setQuantiles($quantiles)
+    {
+        if (is_null($quantiles)) {
+            throw new \InvalidArgumentException('non-nullable quantiles cannot be null');
+        }
+        $allowedValues = $this->getQuantilesAllowableValues();
+        if (array_diff($quantiles, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'quantiles', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+
+        if ((count($quantiles) > 9)) {
+            throw new \InvalidArgumentException('invalid value for $quantiles when calling ForecastRequest., number of items must be less than or equal to 9.');
+        }
+        if ((count($quantiles) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $quantiles when calling ForecastRequest., number of items must be greater than or equal to 1.');
+        }
+        $this->container['quantiles'] = $quantiles;
+
+        return $this;
+    }
+
+    /**
+     * Gets value_bounds
+     *
+     * @return \ForecastAPI\Sdk\Model\ValueBounds|null
+     */
+    public function getValueBounds()
+    {
+        return $this->container['value_bounds'];
+    }
+
+    /**
+     * Sets value_bounds
+     *
+     * @param \ForecastAPI\Sdk\Model\ValueBounds|null $value_bounds value_bounds
+     *
+     * @return self
+     */
+    public function setValueBounds($value_bounds)
+    {
+        if (is_null($value_bounds)) {
+            throw new \InvalidArgumentException('non-nullable value_bounds cannot be null');
+        }
+        $this->container['value_bounds'] = $value_bounds;
+
+        return $this;
+    }
+
+    /**
+     * Gets adjustments
+     *
+     * @return \ForecastAPI\Sdk\Model\AdjustmentsInner[]|null
+     */
+    public function getAdjustments()
+    {
+        return $this->container['adjustments'];
+    }
+
+    /**
+     * Sets adjustments
+     *
+     * @param \ForecastAPI\Sdk\Model\AdjustmentsInner[]|null $adjustments What-if scenario applied on top of the forecast (\"assume we lose the enterprise deal\"). Adjustments compose in array order — ×2 then +50 is not +50 then ×2. Each one moves the point, both bounds and any quantile fan together. Returns an `adjusted` block; the adjusted path is never stored or accuracy-tracked. Honoured by /v2/forecast and /v2/batch/forecast (request-level default or per-series override — period windows are checked against each series' own horizon); rejected on grouped forecasts; ignored by other endpoints sharing this request shape.
+     *
+     * @return self
+     */
+    public function setAdjustments($adjustments)
+    {
+        if (is_null($adjustments)) {
+            throw new \InvalidArgumentException('non-nullable adjustments cannot be null');
+        }
+
+        if ((count($adjustments) > 20)) {
+            throw new \InvalidArgumentException('invalid value for $adjustments when calling ForecastRequest., number of items must be less than or equal to 20.');
+        }
+        if ((count($adjustments) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $adjustments when calling ForecastRequest., number of items must be greater than or equal to 1.');
+        }
+        $this->container['adjustments'] = $adjustments;
+
+        return $this;
+    }
+
+    /**
+     * Gets accumulate
+     *
+     * @return \ForecastAPI\Sdk\Model\AccumulateOptions|null
+     */
+    public function getAccumulate()
+    {
+        return $this->container['accumulate'];
+    }
+
+    /**
+     * Sets accumulate
+     *
+     * @param \ForecastAPI\Sdk\Model\AccumulateOptions|null $accumulate accumulate
+     *
+     * @return self
+     */
+    public function setAccumulate($accumulate)
+    {
+        if (is_null($accumulate)) {
+            throw new \InvalidArgumentException('non-nullable accumulate cannot be null');
+        }
+        $this->container['accumulate'] = $accumulate;
+
+        return $this;
+    }
+
+    /**
+     * Gets selection_metric
+     *
+     * @return string|null
+     */
+    public function getSelectionMetric()
+    {
+        return $this->container['selection_metric'];
+    }
+
+    /**
+     * Sets selection_metric
+     *
+     * @param string|null $selection_metric Which back-testing error metric decides the winning model when candidates are compared: - auto: combined for demand/sales/inventory, sMAPE otherwise (default) - combined: 0.6·MASE + 0.4·sMAPE — balances accuracy and trend capture - mase: Mean Absolute Scaled Error — accuracy relative to a naive forecast - smape: Symmetric Mean Absolute Percentage Error
+     *
+     * @return self
+     */
+    public function setSelectionMetric($selection_metric)
+    {
+        if (is_null($selection_metric)) {
+            array_push($this->openAPINullablesSetToNull, 'selection_metric');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('selection_metric', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getSelectionMetricAllowableValues();
+        if (!is_null($selection_metric) && !in_array($selection_metric, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'selection_metric', must be one of '%s'",
+                    $selection_metric,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['selection_metric'] = $selection_metric;
+
+        return $this;
+    }
+
+    /**
      * Gets data
      *
-     * @return \ForecastAPI\ForecastSDK\Model\ForecastRequestDataInner[]
+     * @return \ForecastAPI\Sdk\Model\ForecastRequestDataInner[]
      */
     public function getData()
     {
@@ -552,7 +1002,7 @@ class ForecastRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data
      *
-     * @param \ForecastAPI\ForecastSDK\Model\ForecastRequestDataInner[] $data Historical time series data
+     * @param \ForecastAPI\Sdk\Model\ForecastRequestDataInner[] $data Historical time series data
      *
      * @return self
      */

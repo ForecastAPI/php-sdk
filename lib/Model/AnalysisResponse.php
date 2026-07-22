@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Model;
+namespace ForecastAPI\Sdk\Model;
 
 use \ArrayAccess;
-use \ForecastAPI\ForecastSDK\ObjectSerializer;
+use \ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * AnalysisResponse Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class AnalysisResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\ForecastAPI\ForecastSDK\Model\AnalysisResponseResult',
-        'meta' => '\ForecastAPI\ForecastSDK\Model\AnalysisResponseMeta'
+        'result' => '\ForecastAPI\Sdk\Model\AnalysisResponseResult',
+        'meta' => '\ForecastAPI\Sdk\Model\AnalysisResponseMeta'
     ];
 
     /**
@@ -300,7 +300,7 @@ class AnalysisResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets result
      *
-     * @return \ForecastAPI\ForecastSDK\Model\AnalysisResponseResult|null
+     * @return \ForecastAPI\Sdk\Model\AnalysisResponseResult|null
      */
     public function getResult()
     {
@@ -310,7 +310,7 @@ class AnalysisResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets result
      *
-     * @param \ForecastAPI\ForecastSDK\Model\AnalysisResponseResult|null $result result
+     * @param \ForecastAPI\Sdk\Model\AnalysisResponseResult|null $result result
      *
      * @return self
      */
@@ -327,7 +327,7 @@ class AnalysisResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets meta
      *
-     * @return \ForecastAPI\ForecastSDK\Model\AnalysisResponseMeta|null
+     * @return \ForecastAPI\Sdk\Model\AnalysisResponseMeta|null
      */
     public function getMeta()
     {
@@ -337,7 +337,7 @@ class AnalysisResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets meta
      *
-     * @param \ForecastAPI\ForecastSDK\Model\AnalysisResponseMeta|null $meta meta
+     * @param \ForecastAPI\Sdk\Model\AnalysisResponseMeta|null $meta meta
      *
      * @return self
      */

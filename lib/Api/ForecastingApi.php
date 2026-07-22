@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Api;
+namespace ForecastAPI\Sdk\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use ForecastAPI\ForecastSDK\ApiException;
-use ForecastAPI\ForecastSDK\Configuration;
-use ForecastAPI\ForecastSDK\FormDataProcessor;
-use ForecastAPI\ForecastSDK\HeaderSelector;
-use ForecastAPI\ForecastSDK\ObjectSerializer;
+use ForecastAPI\Sdk\ApiException;
+use ForecastAPI\Sdk\Configuration;
+use ForecastAPI\Sdk\FormDataProcessor;
+use ForecastAPI\Sdk\HeaderSelector;
+use ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * ForecastingApi Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -75,7 +75,7 @@ class ForecastingApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'v2ForecastPost' => [
+        'createForecast' => [
             'application/json',
         ],
     ];
@@ -127,38 +127,38 @@ class ForecastingApi
     }
 
     /**
-     * Operation v2ForecastPost
+     * Operation createForecast
      *
      * Generate forecast for time series data
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\ForecastRequest $forecast_request forecast_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2ForecastPost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\ForecastRequest $forecast_request forecast_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createForecast'] to see the possible values for this operation
      *
-     * @throws \ForecastAPI\ForecastSDK\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \ForecastAPI\Sdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ForecastAPI\ForecastSDK\Model\ForecastResponse|\ForecastAPI\ForecastSDK\Model\V2ForecastPost400Response|\ForecastAPI\ForecastSDK\Model\ErrorResponse|\ForecastAPI\ForecastSDK\Model\ValidationErrorResponse
+     * @return \ForecastAPI\Sdk\Model\ForecastResponse|\ForecastAPI\Sdk\Model\CreateForecast400Response|\ForecastAPI\Sdk\Model\ErrorResponse|\ForecastAPI\Sdk\Model\ValidationErrorResponse|\ForecastAPI\Sdk\Model\CreateForecast502Response
      */
-    public function v2ForecastPost($forecast_request, string $contentType = self::contentTypes['v2ForecastPost'][0])
+    public function createForecast($forecast_request, string $contentType = self::contentTypes['createForecast'][0])
     {
-        list($response) = $this->v2ForecastPostWithHttpInfo($forecast_request, $contentType);
+        list($response) = $this->createForecastWithHttpInfo($forecast_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation v2ForecastPostWithHttpInfo
+     * Operation createForecastWithHttpInfo
      *
      * Generate forecast for time series data
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\ForecastRequest $forecast_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2ForecastPost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\ForecastRequest $forecast_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createForecast'] to see the possible values for this operation
      *
-     * @throws \ForecastAPI\ForecastSDK\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \ForecastAPI\Sdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ForecastAPI\ForecastSDK\Model\ForecastResponse|\ForecastAPI\ForecastSDK\Model\V2ForecastPost400Response|\ForecastAPI\ForecastSDK\Model\ErrorResponse|\ForecastAPI\ForecastSDK\Model\ValidationErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ForecastAPI\Sdk\Model\ForecastResponse|\ForecastAPI\Sdk\Model\CreateForecast400Response|\ForecastAPI\Sdk\Model\ErrorResponse|\ForecastAPI\Sdk\Model\ValidationErrorResponse|\ForecastAPI\Sdk\Model\CreateForecast502Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function v2ForecastPostWithHttpInfo($forecast_request, string $contentType = self::contentTypes['v2ForecastPost'][0])
+    public function createForecastWithHttpInfo($forecast_request, string $contentType = self::contentTypes['createForecast'][0])
     {
-        $request = $this->v2ForecastPostRequest($forecast_request, $contentType);
+        $request = $this->createForecastRequest($forecast_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -186,25 +186,31 @@ class ForecastingApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\ForecastResponse',
+                        '\ForecastAPI\Sdk\Model\ForecastResponse',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\V2ForecastPost400Response',
+                        '\ForecastAPI\Sdk\Model\CreateForecast400Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\ErrorResponse',
+                        '\ForecastAPI\Sdk\Model\ErrorResponse',
                         $request,
                         $response,
                     );
                 case 422:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\ValidationErrorResponse',
+                        '\ForecastAPI\Sdk\Model\ValidationErrorResponse',
+                        $request,
+                        $response,
+                    );
+                case 502:
+                    return $this->handleResponseWithDataType(
+                        '\ForecastAPI\Sdk\Model\CreateForecast502Response',
                         $request,
                         $response,
                     );
@@ -226,7 +232,7 @@ class ForecastingApi
             }
 
             return $this->handleResponseWithDataType(
-                '\ForecastAPI\ForecastSDK\Model\ForecastResponse',
+                '\ForecastAPI\Sdk\Model\ForecastResponse',
                 $request,
                 $response,
             );
@@ -235,7 +241,7 @@ class ForecastingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\ForecastResponse',
+                        '\ForecastAPI\Sdk\Model\ForecastResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -243,7 +249,7 @@ class ForecastingApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\V2ForecastPost400Response',
+                        '\ForecastAPI\Sdk\Model\CreateForecast400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -251,7 +257,7 @@ class ForecastingApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\ErrorResponse',
+                        '\ForecastAPI\Sdk\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -259,7 +265,15 @@ class ForecastingApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\ValidationErrorResponse',
+                        '\ForecastAPI\Sdk\Model\ValidationErrorResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 502:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ForecastAPI\Sdk\Model\CreateForecast502Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -272,19 +286,19 @@ class ForecastingApi
     }
 
     /**
-     * Operation v2ForecastPostAsync
+     * Operation createForecastAsync
      *
      * Generate forecast for time series data
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\ForecastRequest $forecast_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2ForecastPost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\ForecastRequest $forecast_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createForecast'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2ForecastPostAsync($forecast_request, string $contentType = self::contentTypes['v2ForecastPost'][0])
+    public function createForecastAsync($forecast_request, string $contentType = self::contentTypes['createForecast'][0])
     {
-        return $this->v2ForecastPostAsyncWithHttpInfo($forecast_request, $contentType)
+        return $this->createForecastAsyncWithHttpInfo($forecast_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -293,20 +307,20 @@ class ForecastingApi
     }
 
     /**
-     * Operation v2ForecastPostAsyncWithHttpInfo
+     * Operation createForecastAsyncWithHttpInfo
      *
      * Generate forecast for time series data
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\ForecastRequest $forecast_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2ForecastPost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\ForecastRequest $forecast_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createForecast'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2ForecastPostAsyncWithHttpInfo($forecast_request, string $contentType = self::contentTypes['v2ForecastPost'][0])
+    public function createForecastAsyncWithHttpInfo($forecast_request, string $contentType = self::contentTypes['createForecast'][0])
     {
-        $returnType = '\ForecastAPI\ForecastSDK\Model\ForecastResponse';
-        $request = $this->v2ForecastPostRequest($forecast_request, $contentType);
+        $returnType = '\ForecastAPI\Sdk\Model\ForecastResponse';
+        $request = $this->createForecastRequest($forecast_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -345,21 +359,21 @@ class ForecastingApi
     }
 
     /**
-     * Create request for operation 'v2ForecastPost'
+     * Create request for operation 'createForecast'
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\ForecastRequest $forecast_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2ForecastPost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\ForecastRequest $forecast_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createForecast'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v2ForecastPostRequest($forecast_request, string $contentType = self::contentTypes['v2ForecastPost'][0])
+    public function createForecastRequest($forecast_request, string $contentType = self::contentTypes['createForecast'][0])
     {
 
         // verify the required parameter 'forecast_request' is set
         if ($forecast_request === null || (is_array($forecast_request) && count($forecast_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $forecast_request when calling v2ForecastPost'
+                'Missing the required parameter $forecast_request when calling createForecast'
             );
         }
 

@@ -1,16 +1,16 @@
-# ForecastAPI\ForecastSDK\AnalysisApi
+# ForecastAPI\Sdk\AnalysisApi
 
 All URIs are relative to https://forecastapi.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**v2AnalyzePost()**](AnalysisApi.md#v2AnalyzePost) | **POST** /v2/analyze | Analyze time series data without generating forecast |
+| [**analyzeTimeSeries()**](AnalysisApi.md#analyzeTimeSeries) | **POST** /v2/analyze | Analyze time series data without generating forecast |
 
 
-## `v2AnalyzePost()`
+## `analyzeTimeSeries()`
 
 ```php
-v2AnalyzePost($forecast_request): \ForecastAPI\ForecastSDK\Model\AnalysisResponse
+analyzeTimeSeries($forecast_request): \ForecastAPI\Sdk\Model\AnalysisResponse
 ```
 
 Analyze time series data without generating forecast
@@ -23,24 +23,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = ForecastAPI\ForecastSDK\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = ForecastAPI\Sdk\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ForecastAPI\ForecastSDK\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = ForecastAPI\Sdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new ForecastAPI\ForecastSDK\Api\AnalysisApi(
+$apiInstance = new ForecastAPI\Sdk\Api\AnalysisApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$forecast_request = new \ForecastAPI\ForecastSDK\Model\ForecastRequest(); // \ForecastAPI\ForecastSDK\Model\ForecastRequest
+$forecast_request = new \ForecastAPI\Sdk\Model\ForecastRequest(); // \ForecastAPI\Sdk\Model\ForecastRequest
 
 try {
-    $result = $apiInstance->v2AnalyzePost($forecast_request);
+    $result = $apiInstance->analyzeTimeSeries($forecast_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AnalysisApi->v2AnalyzePost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AnalysisApi->analyzeTimeSeries: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -48,11 +48,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **forecast_request** | [**\ForecastAPI\ForecastSDK\Model\ForecastRequest**](../Model/ForecastRequest.md)|  | |
+| **forecast_request** | [**\ForecastAPI\Sdk\Model\ForecastRequest**](../Model/ForecastRequest.md)|  | |
 
 ### Return type
 
-[**\ForecastAPI\ForecastSDK\Model\AnalysisResponse**](../Model/AnalysisResponse.md)
+[**\ForecastAPI\Sdk\Model\AnalysisResponse**](../Model/AnalysisResponse.md)
 
 ### Authorization
 

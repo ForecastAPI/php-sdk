@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pattern_type** | **string** |  | [optional]
-**characteristics** | [**\ForecastAPI\ForecastSDK\Model\AnalysisResponseResultCharacteristics**](AnalysisResponseResultCharacteristics.md) |  | [optional]
+**characteristics** | [**\ForecastAPI\Sdk\Model\AnalysisResponseResultCharacteristics**](AnalysisResponseResultCharacteristics.md) |  | [optional]
 **recommended_methods** | **string[]** |  | [optional]
 **confidence** | **string** |  | [optional]
 

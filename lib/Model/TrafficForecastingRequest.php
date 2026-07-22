@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Model;
+namespace ForecastAPI\Sdk\Model;
 
 use \ArrayAccess;
-use \ForecastAPI\ForecastSDK\ObjectSerializer;
+use \ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * TrafficForecastingRequest Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -64,8 +64,8 @@ class TrafficForecastingRequest implements ModelInterface, ArrayAccess, \JsonSer
         'periods' => 'int',
         'enable_intelligent_aggregation' => 'bool',
         'confidence_level' => 'float',
-        'data' => '\ForecastAPI\ForecastSDK\Model\TrafficForecastingRequestDataInner[]',
-        'traffic_settings' => '\ForecastAPI\ForecastSDK\Model\TrafficForecastingRequestTrafficSettings'
+        'data' => '\ForecastAPI\Sdk\Model\TrafficForecastingRequestDataInner[]',
+        'traffic_settings' => '\ForecastAPI\Sdk\Model\TrafficForecastingRequestTrafficSettings'
     ];
 
     /**
@@ -601,7 +601,7 @@ class TrafficForecastingRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets data
      *
-     * @return \ForecastAPI\ForecastSDK\Model\TrafficForecastingRequestDataInner[]
+     * @return \ForecastAPI\Sdk\Model\TrafficForecastingRequestDataInner[]
      */
     public function getData()
     {
@@ -611,7 +611,7 @@ class TrafficForecastingRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets data
      *
-     * @param \ForecastAPI\ForecastSDK\Model\TrafficForecastingRequestDataInner[] $data Historical traffic data for forecasting
+     * @param \ForecastAPI\Sdk\Model\TrafficForecastingRequestDataInner[] $data Historical traffic data for forecasting
      *
      * @return self
      */
@@ -633,7 +633,7 @@ class TrafficForecastingRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets traffic_settings
      *
-     * @return \ForecastAPI\ForecastSDK\Model\TrafficForecastingRequestTrafficSettings
+     * @return \ForecastAPI\Sdk\Model\TrafficForecastingRequestTrafficSettings
      */
     public function getTrafficSettings()
     {
@@ -643,7 +643,7 @@ class TrafficForecastingRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets traffic_settings
      *
-     * @param \ForecastAPI\ForecastSDK\Model\TrafficForecastingRequestTrafficSettings $traffic_settings traffic_settings
+     * @param \ForecastAPI\Sdk\Model\TrafficForecastingRequestTrafficSettings $traffic_settings traffic_settings
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Model;
+namespace ForecastAPI\Sdk\Model;
 
 use \ArrayAccess;
-use \ForecastAPI\ForecastSDK\ObjectSerializer;
+use \ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * TrafficForecastingResponseResultCostOptimization Class Doc Comment
  *
  * @category Class
  * @description Cost analysis and optimization recommendations
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -63,8 +63,8 @@ class TrafficForecastingResponseResultCostOptimization implements ModelInterface
         'optimized_cost' => 'float',
         'potential_savings' => 'float',
         'savings_percentage' => 'float',
-        'cost_breakdown' => '\ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultCostOptimizationCostBreakdown',
-        'recommendations' => '\ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultCostOptimizationRecommendationsInner[]'
+        'cost_breakdown' => '\ForecastAPI\Sdk\Model\TrafficForecastingResponseResultCostOptimizationCostBreakdown',
+        'recommendations' => '\ForecastAPI\Sdk\Model\TrafficForecastingResponseResultCostOptimizationRecommendationsInner[]'
     ];
 
     /**
@@ -437,7 +437,7 @@ class TrafficForecastingResponseResultCostOptimization implements ModelInterface
     /**
      * Gets cost_breakdown
      *
-     * @return \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultCostOptimizationCostBreakdown|null
+     * @return \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultCostOptimizationCostBreakdown|null
      */
     public function getCostBreakdown()
     {
@@ -447,7 +447,7 @@ class TrafficForecastingResponseResultCostOptimization implements ModelInterface
     /**
      * Sets cost_breakdown
      *
-     * @param \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultCostOptimizationCostBreakdown|null $cost_breakdown cost_breakdown
+     * @param \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultCostOptimizationCostBreakdown|null $cost_breakdown cost_breakdown
      *
      * @return self
      */
@@ -464,7 +464,7 @@ class TrafficForecastingResponseResultCostOptimization implements ModelInterface
     /**
      * Gets recommendations
      *
-     * @return \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultCostOptimizationRecommendationsInner[]|null
+     * @return \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultCostOptimizationRecommendationsInner[]|null
      */
     public function getRecommendations()
     {
@@ -474,7 +474,7 @@ class TrafficForecastingResponseResultCostOptimization implements ModelInterface
     /**
      * Sets recommendations
      *
-     * @param \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultCostOptimizationRecommendationsInner[]|null $recommendations Cost optimization recommendations
+     * @param \ForecastAPI\Sdk\Model\TrafficForecastingResponseResultCostOptimizationRecommendationsInner[]|null $recommendations Cost optimization recommendations
      *
      * @return self
      */

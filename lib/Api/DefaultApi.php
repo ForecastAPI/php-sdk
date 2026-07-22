@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Api;
+namespace ForecastAPI\Sdk\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use ForecastAPI\ForecastSDK\ApiException;
-use ForecastAPI\ForecastSDK\Configuration;
-use ForecastAPI\ForecastSDK\FormDataProcessor;
-use ForecastAPI\ForecastSDK\HeaderSelector;
-use ForecastAPI\ForecastSDK\ObjectSerializer;
+use ForecastAPI\Sdk\ApiException;
+use ForecastAPI\Sdk\Configuration;
+use ForecastAPI\Sdk\FormDataProcessor;
+use ForecastAPI\Sdk\HeaderSelector;
+use ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * DefaultApi Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -75,7 +75,7 @@ class DefaultApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'v1AnyGet' => [
+        'deprecatedV1' => [
             'application/json',
         ],
     ];
@@ -127,39 +127,39 @@ class DefaultApi
     }
 
     /**
-     * Operation v1AnyGet
+     * Operation deprecatedV1
      *
      * Deprecated v1 endpoints
      *
      * @param  string $any any (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1AnyGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deprecatedV1'] to see the possible values for this operation
      *
-     * @throws \ForecastAPI\ForecastSDK\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \ForecastAPI\Sdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      * @deprecated
      */
-    public function v1AnyGet($any, string $contentType = self::contentTypes['v1AnyGet'][0])
+    public function deprecatedV1($any, string $contentType = self::contentTypes['deprecatedV1'][0])
     {
-        $this->v1AnyGetWithHttpInfo($any, $contentType);
+        $this->deprecatedV1WithHttpInfo($any, $contentType);
     }
 
     /**
-     * Operation v1AnyGetWithHttpInfo
+     * Operation deprecatedV1WithHttpInfo
      *
      * Deprecated v1 endpoints
      *
      * @param  string $any (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1AnyGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deprecatedV1'] to see the possible values for this operation
      *
-     * @throws \ForecastAPI\ForecastSDK\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \ForecastAPI\Sdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      * @deprecated
      */
-    public function v1AnyGetWithHttpInfo($any, string $contentType = self::contentTypes['v1AnyGet'][0])
+    public function deprecatedV1WithHttpInfo($any, string $contentType = self::contentTypes['deprecatedV1'][0])
     {
-        $request = $this->v1AnyGetRequest($any, $contentType);
+        $request = $this->deprecatedV1Request($any, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -190,7 +190,7 @@ class DefaultApi
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\V1AnyGet404Response',
+                        '\ForecastAPI\Sdk\Model\DeprecatedV1404Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -203,20 +203,20 @@ class DefaultApi
     }
 
     /**
-     * Operation v1AnyGetAsync
+     * Operation deprecatedV1Async
      *
      * Deprecated v1 endpoints
      *
      * @param  string $any (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1AnyGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deprecatedV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function v1AnyGetAsync($any, string $contentType = self::contentTypes['v1AnyGet'][0])
+    public function deprecatedV1Async($any, string $contentType = self::contentTypes['deprecatedV1'][0])
     {
-        return $this->v1AnyGetAsyncWithHttpInfo($any, $contentType)
+        return $this->deprecatedV1AsyncWithHttpInfo($any, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -225,21 +225,21 @@ class DefaultApi
     }
 
     /**
-     * Operation v1AnyGetAsyncWithHttpInfo
+     * Operation deprecatedV1AsyncWithHttpInfo
      *
      * Deprecated v1 endpoints
      *
      * @param  string $any (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1AnyGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deprecatedV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      * @deprecated
      */
-    public function v1AnyGetAsyncWithHttpInfo($any, string $contentType = self::contentTypes['v1AnyGet'][0])
+    public function deprecatedV1AsyncWithHttpInfo($any, string $contentType = self::contentTypes['deprecatedV1'][0])
     {
         $returnType = '';
-        $request = $this->v1AnyGetRequest($any, $contentType);
+        $request = $this->deprecatedV1Request($any, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -265,22 +265,22 @@ class DefaultApi
     }
 
     /**
-     * Create request for operation 'v1AnyGet'
+     * Create request for operation 'deprecatedV1'
      *
      * @param  string $any (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1AnyGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deprecatedV1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      * @deprecated
      */
-    public function v1AnyGetRequest($any, string $contentType = self::contentTypes['v1AnyGet'][0])
+    public function deprecatedV1Request($any, string $contentType = self::contentTypes['deprecatedV1'][0])
     {
 
         // verify the required parameter 'any' is set
         if ($any === null || (is_array($any) && count($any) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $any when calling v1AnyGet'
+                'Missing the required parameter $any when calling deprecatedV1'
             );
         }
 

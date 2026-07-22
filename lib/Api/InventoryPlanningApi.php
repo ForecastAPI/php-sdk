@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Api;
+namespace ForecastAPI\Sdk\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use ForecastAPI\ForecastSDK\ApiException;
-use ForecastAPI\ForecastSDK\Configuration;
-use ForecastAPI\ForecastSDK\FormDataProcessor;
-use ForecastAPI\ForecastSDK\HeaderSelector;
-use ForecastAPI\ForecastSDK\ObjectSerializer;
+use ForecastAPI\Sdk\ApiException;
+use ForecastAPI\Sdk\Configuration;
+use ForecastAPI\Sdk\FormDataProcessor;
+use ForecastAPI\Sdk\HeaderSelector;
+use ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * InventoryPlanningApi Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -75,7 +75,7 @@ class InventoryPlanningApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'v2InventoryPlanningPost' => [
+        'createInventoryPlan' => [
             'application/json',
         ],
     ];
@@ -127,38 +127,38 @@ class InventoryPlanningApi
     }
 
     /**
-     * Operation v2InventoryPlanningPost
+     * Operation createInventoryPlan
      *
      * Generate comprehensive inventory planning recommendations
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\InventoryPlanningRequest $inventory_planning_request inventory_planning_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2InventoryPlanningPost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\InventoryPlanningRequest $inventory_planning_request inventory_planning_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createInventoryPlan'] to see the possible values for this operation
      *
-     * @throws \ForecastAPI\ForecastSDK\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \ForecastAPI\Sdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ForecastAPI\ForecastSDK\Model\InventoryPlanningResponse|\ForecastAPI\ForecastSDK\Model\V2InventoryPlanningPost400Response|\ForecastAPI\ForecastSDK\Model\ErrorResponse|\ForecastAPI\ForecastSDK\Model\ValidationErrorResponse|\ForecastAPI\ForecastSDK\Model\V2InventoryPlanningPost500Response
+     * @return \ForecastAPI\Sdk\Model\InventoryPlanningResponse|\ForecastAPI\Sdk\Model\CreateInventoryPlan400Response|\ForecastAPI\Sdk\Model\ErrorResponse|\ForecastAPI\Sdk\Model\ValidationErrorResponse|\ForecastAPI\Sdk\Model\CreateInventoryPlan500Response
      */
-    public function v2InventoryPlanningPost($inventory_planning_request, string $contentType = self::contentTypes['v2InventoryPlanningPost'][0])
+    public function createInventoryPlan($inventory_planning_request, string $contentType = self::contentTypes['createInventoryPlan'][0])
     {
-        list($response) = $this->v2InventoryPlanningPostWithHttpInfo($inventory_planning_request, $contentType);
+        list($response) = $this->createInventoryPlanWithHttpInfo($inventory_planning_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation v2InventoryPlanningPostWithHttpInfo
+     * Operation createInventoryPlanWithHttpInfo
      *
      * Generate comprehensive inventory planning recommendations
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\InventoryPlanningRequest $inventory_planning_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2InventoryPlanningPost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\InventoryPlanningRequest $inventory_planning_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createInventoryPlan'] to see the possible values for this operation
      *
-     * @throws \ForecastAPI\ForecastSDK\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \ForecastAPI\Sdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ForecastAPI\ForecastSDK\Model\InventoryPlanningResponse|\ForecastAPI\ForecastSDK\Model\V2InventoryPlanningPost400Response|\ForecastAPI\ForecastSDK\Model\ErrorResponse|\ForecastAPI\ForecastSDK\Model\ValidationErrorResponse|\ForecastAPI\ForecastSDK\Model\V2InventoryPlanningPost500Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ForecastAPI\Sdk\Model\InventoryPlanningResponse|\ForecastAPI\Sdk\Model\CreateInventoryPlan400Response|\ForecastAPI\Sdk\Model\ErrorResponse|\ForecastAPI\Sdk\Model\ValidationErrorResponse|\ForecastAPI\Sdk\Model\CreateInventoryPlan500Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function v2InventoryPlanningPostWithHttpInfo($inventory_planning_request, string $contentType = self::contentTypes['v2InventoryPlanningPost'][0])
+    public function createInventoryPlanWithHttpInfo($inventory_planning_request, string $contentType = self::contentTypes['createInventoryPlan'][0])
     {
-        $request = $this->v2InventoryPlanningPostRequest($inventory_planning_request, $contentType);
+        $request = $this->createInventoryPlanRequest($inventory_planning_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -186,31 +186,31 @@ class InventoryPlanningApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\InventoryPlanningResponse',
+                        '\ForecastAPI\Sdk\Model\InventoryPlanningResponse',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\V2InventoryPlanningPost400Response',
+                        '\ForecastAPI\Sdk\Model\CreateInventoryPlan400Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\ErrorResponse',
+                        '\ForecastAPI\Sdk\Model\ErrorResponse',
                         $request,
                         $response,
                     );
                 case 422:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\ValidationErrorResponse',
+                        '\ForecastAPI\Sdk\Model\ValidationErrorResponse',
                         $request,
                         $response,
                     );
                 case 500:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\V2InventoryPlanningPost500Response',
+                        '\ForecastAPI\Sdk\Model\CreateInventoryPlan500Response',
                         $request,
                         $response,
                     );
@@ -232,7 +232,7 @@ class InventoryPlanningApi
             }
 
             return $this->handleResponseWithDataType(
-                '\ForecastAPI\ForecastSDK\Model\InventoryPlanningResponse',
+                '\ForecastAPI\Sdk\Model\InventoryPlanningResponse',
                 $request,
                 $response,
             );
@@ -241,7 +241,7 @@ class InventoryPlanningApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\InventoryPlanningResponse',
+                        '\ForecastAPI\Sdk\Model\InventoryPlanningResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -249,7 +249,7 @@ class InventoryPlanningApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\V2InventoryPlanningPost400Response',
+                        '\ForecastAPI\Sdk\Model\CreateInventoryPlan400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -257,7 +257,7 @@ class InventoryPlanningApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\ErrorResponse',
+                        '\ForecastAPI\Sdk\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -265,7 +265,7 @@ class InventoryPlanningApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\ValidationErrorResponse',
+                        '\ForecastAPI\Sdk\Model\ValidationErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -273,7 +273,7 @@ class InventoryPlanningApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\V2InventoryPlanningPost500Response',
+                        '\ForecastAPI\Sdk\Model\CreateInventoryPlan500Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -286,19 +286,19 @@ class InventoryPlanningApi
     }
 
     /**
-     * Operation v2InventoryPlanningPostAsync
+     * Operation createInventoryPlanAsync
      *
      * Generate comprehensive inventory planning recommendations
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\InventoryPlanningRequest $inventory_planning_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2InventoryPlanningPost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\InventoryPlanningRequest $inventory_planning_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createInventoryPlan'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2InventoryPlanningPostAsync($inventory_planning_request, string $contentType = self::contentTypes['v2InventoryPlanningPost'][0])
+    public function createInventoryPlanAsync($inventory_planning_request, string $contentType = self::contentTypes['createInventoryPlan'][0])
     {
-        return $this->v2InventoryPlanningPostAsyncWithHttpInfo($inventory_planning_request, $contentType)
+        return $this->createInventoryPlanAsyncWithHttpInfo($inventory_planning_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -307,20 +307,20 @@ class InventoryPlanningApi
     }
 
     /**
-     * Operation v2InventoryPlanningPostAsyncWithHttpInfo
+     * Operation createInventoryPlanAsyncWithHttpInfo
      *
      * Generate comprehensive inventory planning recommendations
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\InventoryPlanningRequest $inventory_planning_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2InventoryPlanningPost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\InventoryPlanningRequest $inventory_planning_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createInventoryPlan'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2InventoryPlanningPostAsyncWithHttpInfo($inventory_planning_request, string $contentType = self::contentTypes['v2InventoryPlanningPost'][0])
+    public function createInventoryPlanAsyncWithHttpInfo($inventory_planning_request, string $contentType = self::contentTypes['createInventoryPlan'][0])
     {
-        $returnType = '\ForecastAPI\ForecastSDK\Model\InventoryPlanningResponse';
-        $request = $this->v2InventoryPlanningPostRequest($inventory_planning_request, $contentType);
+        $returnType = '\ForecastAPI\Sdk\Model\InventoryPlanningResponse';
+        $request = $this->createInventoryPlanRequest($inventory_planning_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -359,21 +359,21 @@ class InventoryPlanningApi
     }
 
     /**
-     * Create request for operation 'v2InventoryPlanningPost'
+     * Create request for operation 'createInventoryPlan'
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\InventoryPlanningRequest $inventory_planning_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2InventoryPlanningPost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\InventoryPlanningRequest $inventory_planning_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createInventoryPlan'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v2InventoryPlanningPostRequest($inventory_planning_request, string $contentType = self::contentTypes['v2InventoryPlanningPost'][0])
+    public function createInventoryPlanRequest($inventory_planning_request, string $contentType = self::contentTypes['createInventoryPlan'][0])
     {
 
         // verify the required parameter 'inventory_planning_request' is set
         if ($inventory_planning_request === null || (is_array($inventory_planning_request) && count($inventory_planning_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $inventory_planning_request when calling v2InventoryPlanningPost'
+                'Missing the required parameter $inventory_planning_request when calling createInventoryPlan'
             );
         }
 

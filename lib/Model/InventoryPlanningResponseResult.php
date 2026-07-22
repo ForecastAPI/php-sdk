@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Model;
+namespace ForecastAPI\Sdk\Model;
 
 use \ArrayAccess;
-use \ForecastAPI\ForecastSDK\ObjectSerializer;
+use \ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * InventoryPlanningResponseResult Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -63,9 +63,9 @@ class InventoryPlanningResponseResult implements ModelInterface, ArrayAccess, \J
         'minimum_stock' => 'float',
         'reorder_point' => 'float',
         'safety_stock' => 'float',
-        'suppliers' => '\ForecastAPI\ForecastSDK\Model\InventoryPlanningResponseResultSuppliersInner[]',
-        'stock_analysis' => '\ForecastAPI\ForecastSDK\Model\InventoryPlanningResponseResultStockAnalysis',
-        'forecast_data' => '\ForecastAPI\ForecastSDK\Model\InventoryPlanningResponseResultForecastDataInner[]'
+        'suppliers' => '\ForecastAPI\Sdk\Model\InventoryPlanningResponseResultSuppliersInner[]',
+        'stock_analysis' => '\ForecastAPI\Sdk\Model\InventoryPlanningResponseResultStockAnalysis',
+        'forecast_data' => '\ForecastAPI\Sdk\Model\InventoryPlanningResponseResultForecastDataInner[]'
     ];
 
     /**
@@ -477,7 +477,7 @@ class InventoryPlanningResponseResult implements ModelInterface, ArrayAccess, \J
     /**
      * Gets suppliers
      *
-     * @return \ForecastAPI\ForecastSDK\Model\InventoryPlanningResponseResultSuppliersInner[]|null
+     * @return \ForecastAPI\Sdk\Model\InventoryPlanningResponseResultSuppliersInner[]|null
      */
     public function getSuppliers()
     {
@@ -487,7 +487,7 @@ class InventoryPlanningResponseResult implements ModelInterface, ArrayAccess, \J
     /**
      * Sets suppliers
      *
-     * @param \ForecastAPI\ForecastSDK\Model\InventoryPlanningResponseResultSuppliersInner[]|null $suppliers Analysis and recommendations for each supplier
+     * @param \ForecastAPI\Sdk\Model\InventoryPlanningResponseResultSuppliersInner[]|null $suppliers Analysis and recommendations for each supplier
      *
      * @return self
      */
@@ -504,7 +504,7 @@ class InventoryPlanningResponseResult implements ModelInterface, ArrayAccess, \J
     /**
      * Gets stock_analysis
      *
-     * @return \ForecastAPI\ForecastSDK\Model\InventoryPlanningResponseResultStockAnalysis|null
+     * @return \ForecastAPI\Sdk\Model\InventoryPlanningResponseResultStockAnalysis|null
      */
     public function getStockAnalysis()
     {
@@ -514,7 +514,7 @@ class InventoryPlanningResponseResult implements ModelInterface, ArrayAccess, \J
     /**
      * Sets stock_analysis
      *
-     * @param \ForecastAPI\ForecastSDK\Model\InventoryPlanningResponseResultStockAnalysis|null $stock_analysis stock_analysis
+     * @param \ForecastAPI\Sdk\Model\InventoryPlanningResponseResultStockAnalysis|null $stock_analysis stock_analysis
      *
      * @return self
      */
@@ -531,7 +531,7 @@ class InventoryPlanningResponseResult implements ModelInterface, ArrayAccess, \J
     /**
      * Gets forecast_data
      *
-     * @return \ForecastAPI\ForecastSDK\Model\InventoryPlanningResponseResultForecastDataInner[]|null
+     * @return \ForecastAPI\Sdk\Model\InventoryPlanningResponseResultForecastDataInner[]|null
      */
     public function getForecastData()
     {
@@ -541,7 +541,7 @@ class InventoryPlanningResponseResult implements ModelInterface, ArrayAccess, \J
     /**
      * Sets forecast_data
      *
-     * @param \ForecastAPI\ForecastSDK\Model\InventoryPlanningResponseResultForecastDataInner[]|null $forecast_data Underlying forecast data used for planning
+     * @param \ForecastAPI\Sdk\Model\InventoryPlanningResponseResultForecastDataInner[]|null $forecast_data Underlying forecast data used for planning
      *
      * @return self
      */

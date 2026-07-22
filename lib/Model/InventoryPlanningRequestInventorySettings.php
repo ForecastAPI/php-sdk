@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Model;
+namespace ForecastAPI\Sdk\Model;
 
 use \ArrayAccess;
-use \ForecastAPI\ForecastSDK\ObjectSerializer;
+use \ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * InventoryPlanningRequestInventorySettings Class Doc Comment
  *
  * @category Class
  * @description Current inventory status and supplier information
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,7 +62,7 @@ class InventoryPlanningRequestInventorySettings implements ModelInterface, Array
         'current_stock' => 'float',
         'minimum_stock' => 'float',
         'service_level' => 'float',
-        'suppliers' => '\ForecastAPI\ForecastSDK\Model\InventoryPlanningRequestInventorySettingsSuppliersInner[]'
+        'suppliers' => '\ForecastAPI\Sdk\Model\InventoryPlanningRequestInventorySettingsSuppliersInner[]'
     ];
 
     /**
@@ -446,7 +446,7 @@ class InventoryPlanningRequestInventorySettings implements ModelInterface, Array
     /**
      * Gets suppliers
      *
-     * @return \ForecastAPI\ForecastSDK\Model\InventoryPlanningRequestInventorySettingsSuppliersInner[]
+     * @return \ForecastAPI\Sdk\Model\InventoryPlanningRequestInventorySettingsSuppliersInner[]
      */
     public function getSuppliers()
     {
@@ -456,7 +456,7 @@ class InventoryPlanningRequestInventorySettings implements ModelInterface, Array
     /**
      * Sets suppliers
      *
-     * @param \ForecastAPI\ForecastSDK\Model\InventoryPlanningRequestInventorySettingsSuppliersInner[] $suppliers Available suppliers with their characteristics
+     * @param \ForecastAPI\Sdk\Model\InventoryPlanningRequestInventorySettingsSuppliersInner[] $suppliers Available suppliers with their characteristics
      *
      * @return self
      */

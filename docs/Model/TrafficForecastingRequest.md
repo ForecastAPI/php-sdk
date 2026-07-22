@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **periods** | **int** | Number of periods to forecast ahead |
 **enable_intelligent_aggregation** | **bool** | Enable intelligent data aggregation for improved forecasting | [optional]
 **confidence_level** | **float** | Confidence level for forecast intervals (default 0.95) | [optional]
-**data** | [**\ForecastAPI\ForecastSDK\Model\TrafficForecastingRequestDataInner[]**](TrafficForecastingRequestDataInner.md) | Historical traffic data for forecasting |
-**traffic_settings** | [**\ForecastAPI\ForecastSDK\Model\TrafficForecastingRequestTrafficSettings**](TrafficForecastingRequestTrafficSettings.md) |  |
+**data** | [**\ForecastAPI\Sdk\Model\TrafficForecastingRequestDataInner[]**](TrafficForecastingRequestDataInner.md) | Historical traffic data for forecasting |
+**traffic_settings** | [**\ForecastAPI\Sdk\Model\TrafficForecastingRequestTrafficSettings**](TrafficForecastingRequestTrafficSettings.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

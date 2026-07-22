@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Model;
+namespace ForecastAPI\Sdk\Model;
 
 use \ArrayAccess;
-use \ForecastAPI\ForecastSDK\ObjectSerializer;
+use \ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * ForecastResponse Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,10 @@ class ForecastResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'result' => '\ForecastAPI\ForecastSDK\Model\ForecastResponseResult',
-        'meta' => '\ForecastAPI\ForecastSDK\Model\ForecastResponseMeta'
+        'result' => '\ForecastAPI\Sdk\Model\ForecastResponseResult',
+        'adjusted' => '\ForecastAPI\Sdk\Model\AdjustedForecast',
+        'accumulated' => '\ForecastAPI\Sdk\Model\AccumulatedForecast',
+        'meta' => '\ForecastAPI\Sdk\Model\ForecastResponseMeta'
     ];
 
     /**
@@ -71,6 +73,8 @@ class ForecastResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'result' => null,
+        'adjusted' => null,
+        'accumulated' => null,
         'meta' => null
     ];
 
@@ -81,6 +85,8 @@ class ForecastResponse implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'result' => false,
+        'adjusted' => false,
+        'accumulated' => false,
         'meta' => false
     ];
 
@@ -171,6 +177,8 @@ class ForecastResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'result' => 'result',
+        'adjusted' => 'adjusted',
+        'accumulated' => 'accumulated',
         'meta' => 'meta'
     ];
 
@@ -181,6 +189,8 @@ class ForecastResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'result' => 'setResult',
+        'adjusted' => 'setAdjusted',
+        'accumulated' => 'setAccumulated',
         'meta' => 'setMeta'
     ];
 
@@ -191,6 +201,8 @@ class ForecastResponse implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'result' => 'getResult',
+        'adjusted' => 'getAdjusted',
+        'accumulated' => 'getAccumulated',
         'meta' => 'getMeta'
     ];
 
@@ -252,6 +264,8 @@ class ForecastResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('result', $data ?? [], null);
+        $this->setIfExists('adjusted', $data ?? [], null);
+        $this->setIfExists('accumulated', $data ?? [], null);
         $this->setIfExists('meta', $data ?? [], null);
     }
 
@@ -300,7 +314,7 @@ class ForecastResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets result
      *
-     * @return \ForecastAPI\ForecastSDK\Model\ForecastResponseResult|null
+     * @return \ForecastAPI\Sdk\Model\ForecastResponseResult|null
      */
     public function getResult()
     {
@@ -310,7 +324,7 @@ class ForecastResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets result
      *
-     * @param \ForecastAPI\ForecastSDK\Model\ForecastResponseResult|null $result result
+     * @param \ForecastAPI\Sdk\Model\ForecastResponseResult|null $result result
      *
      * @return self
      */
@@ -325,9 +339,63 @@ class ForecastResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets adjusted
+     *
+     * @return \ForecastAPI\Sdk\Model\AdjustedForecast|null
+     */
+    public function getAdjusted()
+    {
+        return $this->container['adjusted'];
+    }
+
+    /**
+     * Sets adjusted
+     *
+     * @param \ForecastAPI\Sdk\Model\AdjustedForecast|null $adjusted adjusted
+     *
+     * @return self
+     */
+    public function setAdjusted($adjusted)
+    {
+        if (is_null($adjusted)) {
+            throw new \InvalidArgumentException('non-nullable adjusted cannot be null');
+        }
+        $this->container['adjusted'] = $adjusted;
+
+        return $this;
+    }
+
+    /**
+     * Gets accumulated
+     *
+     * @return \ForecastAPI\Sdk\Model\AccumulatedForecast|null
+     */
+    public function getAccumulated()
+    {
+        return $this->container['accumulated'];
+    }
+
+    /**
+     * Sets accumulated
+     *
+     * @param \ForecastAPI\Sdk\Model\AccumulatedForecast|null $accumulated accumulated
+     *
+     * @return self
+     */
+    public function setAccumulated($accumulated)
+    {
+        if (is_null($accumulated)) {
+            throw new \InvalidArgumentException('non-nullable accumulated cannot be null');
+        }
+        $this->container['accumulated'] = $accumulated;
+
+        return $this;
+    }
+
+    /**
      * Gets meta
      *
-     * @return \ForecastAPI\ForecastSDK\Model\ForecastResponseMeta|null
+     * @return \ForecastAPI\Sdk\Model\ForecastResponseMeta|null
      */
     public function getMeta()
     {
@@ -337,7 +405,7 @@ class ForecastResponse implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets meta
      *
-     * @param \ForecastAPI\ForecastSDK\Model\ForecastResponseMeta|null $meta meta
+     * @param \ForecastAPI\Sdk\Model\ForecastResponseMeta|null $meta meta
      *
      * @return self
      */

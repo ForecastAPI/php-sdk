@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Model;
+namespace ForecastAPI\Sdk\Model;
 
 use \ArrayAccess;
-use \ForecastAPI\ForecastSDK\ObjectSerializer;
+use \ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * ForecastResponseMeta Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,8 @@ class ForecastResponseMeta implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'timing' => '\ForecastAPI\ForecastSDK\Model\ForecastResponseMetaTiming'
+        'selection_metric' => 'string',
+        'timing' => '\ForecastAPI\Sdk\Model\ForecastResponseMetaTiming'
     ];
 
     /**
@@ -69,6 +70,7 @@ class ForecastResponseMeta implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'selection_metric' => null,
         'timing' => null
     ];
 
@@ -78,6 +80,7 @@ class ForecastResponseMeta implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'selection_metric' => false,
         'timing' => false
     ];
 
@@ -167,6 +170,7 @@ class ForecastResponseMeta implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
+        'selection_metric' => 'selection_metric',
         'timing' => 'timing'
     ];
 
@@ -176,6 +180,7 @@ class ForecastResponseMeta implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
+        'selection_metric' => 'setSelectionMetric',
         'timing' => 'setTiming'
     ];
 
@@ -185,6 +190,7 @@ class ForecastResponseMeta implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
+        'selection_metric' => 'getSelectionMetric',
         'timing' => 'getTiming'
     ];
 
@@ -245,6 +251,7 @@ class ForecastResponseMeta implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('selection_metric', $data ?? [], null);
         $this->setIfExists('timing', $data ?? [], null);
     }
 
@@ -291,9 +298,36 @@ class ForecastResponseMeta implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
+     * Gets selection_metric
+     *
+     * @return string|null
+     */
+    public function getSelectionMetric()
+    {
+        return $this->container['selection_metric'];
+    }
+
+    /**
+     * Sets selection_metric
+     *
+     * @param string|null $selection_metric The back-testing metric that actually chose the winning model
+     *
+     * @return self
+     */
+    public function setSelectionMetric($selection_metric)
+    {
+        if (is_null($selection_metric)) {
+            throw new \InvalidArgumentException('non-nullable selection_metric cannot be null');
+        }
+        $this->container['selection_metric'] = $selection_metric;
+
+        return $this;
+    }
+
+    /**
      * Gets timing
      *
-     * @return \ForecastAPI\ForecastSDK\Model\ForecastResponseMetaTiming|null
+     * @return \ForecastAPI\Sdk\Model\ForecastResponseMetaTiming|null
      */
     public function getTiming()
     {
@@ -303,7 +337,7 @@ class ForecastResponseMeta implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets timing
      *
-     * @param \ForecastAPI\ForecastSDK\Model\ForecastResponseMetaTiming|null $timing timing
+     * @param \ForecastAPI\Sdk\Model\ForecastResponseMetaTiming|null $timing timing
      *
      * @return self
      */

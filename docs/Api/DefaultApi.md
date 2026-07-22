@@ -1,16 +1,16 @@
-# ForecastAPI\ForecastSDK\DefaultApi
+# ForecastAPI\Sdk\DefaultApi
 
 All URIs are relative to https://forecastapi.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**v1AnyGet()**](DefaultApi.md#v1AnyGet) | **GET** /v1/{any} | Deprecated v1 endpoints |
+| [**deprecatedV1()**](DefaultApi.md#deprecatedV1) | **GET** /v1/{any} | Deprecated v1 endpoints |
 
 
-## `v1AnyGet()`
+## `deprecatedV1()`
 
 ```php
-v1AnyGet($any)
+deprecatedV1($any)
 ```
 
 Deprecated v1 endpoints
@@ -23,7 +23,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new ForecastAPI\ForecastSDK\Api\DefaultApi(
+$apiInstance = new ForecastAPI\Sdk\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
@@ -31,9 +31,9 @@ $apiInstance = new ForecastAPI\ForecastSDK\Api\DefaultApi(
 $any = 'any_example'; // string
 
 try {
-    $apiInstance->v1AnyGet($any);
+    $apiInstance->deprecatedV1($any);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->v1AnyGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->deprecatedV1: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

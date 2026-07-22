@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Model;
+namespace ForecastAPI\Sdk\Model;
 
 use \ArrayAccess;
-use \ForecastAPI\ForecastSDK\ObjectSerializer;
+use \ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * InventoryPlanningRequest Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -64,8 +64,8 @@ class InventoryPlanningRequest implements ModelInterface, ArrayAccess, \JsonSeri
         'periods' => 'int',
         'enable_intelligent_aggregation' => 'bool',
         'confidence_level' => 'float',
-        'data' => '\ForecastAPI\ForecastSDK\Model\InventoryPlanningRequestDataInner[]',
-        'inventory_settings' => '\ForecastAPI\ForecastSDK\Model\InventoryPlanningRequestInventorySettings'
+        'data' => '\ForecastAPI\Sdk\Model\InventoryPlanningRequestDataInner[]',
+        'inventory_settings' => '\ForecastAPI\Sdk\Model\InventoryPlanningRequestInventorySettings'
     ];
 
     /**
@@ -599,7 +599,7 @@ class InventoryPlanningRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets data
      *
-     * @return \ForecastAPI\ForecastSDK\Model\InventoryPlanningRequestDataInner[]
+     * @return \ForecastAPI\Sdk\Model\InventoryPlanningRequestDataInner[]
      */
     public function getData()
     {
@@ -609,7 +609,7 @@ class InventoryPlanningRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets data
      *
-     * @param \ForecastAPI\ForecastSDK\Model\InventoryPlanningRequestDataInner[] $data Historical demand/sales data for forecasting
+     * @param \ForecastAPI\Sdk\Model\InventoryPlanningRequestDataInner[] $data Historical demand/sales data for forecasting
      *
      * @return self
      */
@@ -631,7 +631,7 @@ class InventoryPlanningRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets inventory_settings
      *
-     * @return \ForecastAPI\ForecastSDK\Model\InventoryPlanningRequestInventorySettings
+     * @return \ForecastAPI\Sdk\Model\InventoryPlanningRequestInventorySettings
      */
     public function getInventorySettings()
     {
@@ -641,7 +641,7 @@ class InventoryPlanningRequest implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets inventory_settings
      *
-     * @param \ForecastAPI\ForecastSDK\Model\InventoryPlanningRequestInventorySettings $inventory_settings inventory_settings
+     * @param \ForecastAPI\Sdk\Model\InventoryPlanningRequestInventorySettings $inventory_settings inventory_settings
      *
      * @return self
      */

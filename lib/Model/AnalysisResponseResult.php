@@ -5,7 +5,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Model;
+namespace ForecastAPI\Sdk\Model;
 
 use \ArrayAccess;
-use \ForecastAPI\ForecastSDK\ObjectSerializer;
+use \ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * AnalysisResponseResult Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,7 +59,7 @@ class AnalysisResponseResult implements ModelInterface, ArrayAccess, \JsonSerial
       */
     protected static $openAPITypes = [
         'pattern_type' => 'string',
-        'characteristics' => '\ForecastAPI\ForecastSDK\Model\AnalysisResponseResultCharacteristics',
+        'characteristics' => '\ForecastAPI\Sdk\Model\AnalysisResponseResultCharacteristics',
         'recommended_methods' => 'string[]',
         'confidence' => 'string'
     ];
@@ -405,7 +405,7 @@ class AnalysisResponseResult implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets characteristics
      *
-     * @return \ForecastAPI\ForecastSDK\Model\AnalysisResponseResultCharacteristics|null
+     * @return \ForecastAPI\Sdk\Model\AnalysisResponseResultCharacteristics|null
      */
     public function getCharacteristics()
     {
@@ -415,7 +415,7 @@ class AnalysisResponseResult implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets characteristics
      *
-     * @param \ForecastAPI\ForecastSDK\Model\AnalysisResponseResultCharacteristics|null $characteristics characteristics
+     * @param \ForecastAPI\Sdk\Model\AnalysisResponseResultCharacteristics|null $characteristics characteristics
      *
      * @return self
      */

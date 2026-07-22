@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Api;
+namespace ForecastAPI\Sdk\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use ForecastAPI\ForecastSDK\ApiException;
-use ForecastAPI\ForecastSDK\Configuration;
-use ForecastAPI\ForecastSDK\FormDataProcessor;
-use ForecastAPI\ForecastSDK\HeaderSelector;
-use ForecastAPI\ForecastSDK\ObjectSerializer;
+use ForecastAPI\Sdk\ApiException;
+use ForecastAPI\Sdk\Configuration;
+use ForecastAPI\Sdk\FormDataProcessor;
+use ForecastAPI\Sdk\HeaderSelector;
+use ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * TrafficForecastingApi Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -75,7 +75,7 @@ class TrafficForecastingApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'v2TrafficForecastingPost' => [
+        'createTrafficForecast' => [
             'application/json',
         ],
     ];
@@ -127,38 +127,38 @@ class TrafficForecastingApi
     }
 
     /**
-     * Operation v2TrafficForecastingPost
+     * Operation createTrafficForecast
      *
      * Generate traffic forecasting with infrastructure scaling recommendations
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\TrafficForecastingRequest $traffic_forecasting_request traffic_forecasting_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2TrafficForecastingPost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\TrafficForecastingRequest $traffic_forecasting_request traffic_forecasting_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTrafficForecast'] to see the possible values for this operation
      *
-     * @throws \ForecastAPI\ForecastSDK\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \ForecastAPI\Sdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponse|\ForecastAPI\ForecastSDK\Model\V2InventoryPlanningPost400Response|\ForecastAPI\ForecastSDK\Model\ErrorResponse|\ForecastAPI\ForecastSDK\Model\ValidationErrorResponse|\ForecastAPI\ForecastSDK\Model\V2TrafficForecastingPost500Response
+     * @return \ForecastAPI\Sdk\Model\TrafficForecastingResponse|\ForecastAPI\Sdk\Model\CreateInventoryPlan400Response|\ForecastAPI\Sdk\Model\ErrorResponse|\ForecastAPI\Sdk\Model\ValidationErrorResponse|\ForecastAPI\Sdk\Model\CreateTrafficForecast500Response
      */
-    public function v2TrafficForecastingPost($traffic_forecasting_request, string $contentType = self::contentTypes['v2TrafficForecastingPost'][0])
+    public function createTrafficForecast($traffic_forecasting_request, string $contentType = self::contentTypes['createTrafficForecast'][0])
     {
-        list($response) = $this->v2TrafficForecastingPostWithHttpInfo($traffic_forecasting_request, $contentType);
+        list($response) = $this->createTrafficForecastWithHttpInfo($traffic_forecasting_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation v2TrafficForecastingPostWithHttpInfo
+     * Operation createTrafficForecastWithHttpInfo
      *
      * Generate traffic forecasting with infrastructure scaling recommendations
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\TrafficForecastingRequest $traffic_forecasting_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2TrafficForecastingPost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\TrafficForecastingRequest $traffic_forecasting_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTrafficForecast'] to see the possible values for this operation
      *
-     * @throws \ForecastAPI\ForecastSDK\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \ForecastAPI\Sdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ForecastAPI\ForecastSDK\Model\TrafficForecastingResponse|\ForecastAPI\ForecastSDK\Model\V2InventoryPlanningPost400Response|\ForecastAPI\ForecastSDK\Model\ErrorResponse|\ForecastAPI\ForecastSDK\Model\ValidationErrorResponse|\ForecastAPI\ForecastSDK\Model\V2TrafficForecastingPost500Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ForecastAPI\Sdk\Model\TrafficForecastingResponse|\ForecastAPI\Sdk\Model\CreateInventoryPlan400Response|\ForecastAPI\Sdk\Model\ErrorResponse|\ForecastAPI\Sdk\Model\ValidationErrorResponse|\ForecastAPI\Sdk\Model\CreateTrafficForecast500Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function v2TrafficForecastingPostWithHttpInfo($traffic_forecasting_request, string $contentType = self::contentTypes['v2TrafficForecastingPost'][0])
+    public function createTrafficForecastWithHttpInfo($traffic_forecasting_request, string $contentType = self::contentTypes['createTrafficForecast'][0])
     {
-        $request = $this->v2TrafficForecastingPostRequest($traffic_forecasting_request, $contentType);
+        $request = $this->createTrafficForecastRequest($traffic_forecasting_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -186,31 +186,31 @@ class TrafficForecastingApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\TrafficForecastingResponse',
+                        '\ForecastAPI\Sdk\Model\TrafficForecastingResponse',
                         $request,
                         $response,
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\V2InventoryPlanningPost400Response',
+                        '\ForecastAPI\Sdk\Model\CreateInventoryPlan400Response',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\ErrorResponse',
+                        '\ForecastAPI\Sdk\Model\ErrorResponse',
                         $request,
                         $response,
                     );
                 case 422:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\ValidationErrorResponse',
+                        '\ForecastAPI\Sdk\Model\ValidationErrorResponse',
                         $request,
                         $response,
                     );
                 case 500:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\V2TrafficForecastingPost500Response',
+                        '\ForecastAPI\Sdk\Model\CreateTrafficForecast500Response',
                         $request,
                         $response,
                     );
@@ -232,7 +232,7 @@ class TrafficForecastingApi
             }
 
             return $this->handleResponseWithDataType(
-                '\ForecastAPI\ForecastSDK\Model\TrafficForecastingResponse',
+                '\ForecastAPI\Sdk\Model\TrafficForecastingResponse',
                 $request,
                 $response,
             );
@@ -241,7 +241,7 @@ class TrafficForecastingApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\TrafficForecastingResponse',
+                        '\ForecastAPI\Sdk\Model\TrafficForecastingResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -249,7 +249,7 @@ class TrafficForecastingApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\V2InventoryPlanningPost400Response',
+                        '\ForecastAPI\Sdk\Model\CreateInventoryPlan400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -257,7 +257,7 @@ class TrafficForecastingApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\ErrorResponse',
+                        '\ForecastAPI\Sdk\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -265,7 +265,7 @@ class TrafficForecastingApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\ValidationErrorResponse',
+                        '\ForecastAPI\Sdk\Model\ValidationErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -273,7 +273,7 @@ class TrafficForecastingApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\V2TrafficForecastingPost500Response',
+                        '\ForecastAPI\Sdk\Model\CreateTrafficForecast500Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -286,19 +286,19 @@ class TrafficForecastingApi
     }
 
     /**
-     * Operation v2TrafficForecastingPostAsync
+     * Operation createTrafficForecastAsync
      *
      * Generate traffic forecasting with infrastructure scaling recommendations
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\TrafficForecastingRequest $traffic_forecasting_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2TrafficForecastingPost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\TrafficForecastingRequest $traffic_forecasting_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTrafficForecast'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2TrafficForecastingPostAsync($traffic_forecasting_request, string $contentType = self::contentTypes['v2TrafficForecastingPost'][0])
+    public function createTrafficForecastAsync($traffic_forecasting_request, string $contentType = self::contentTypes['createTrafficForecast'][0])
     {
-        return $this->v2TrafficForecastingPostAsyncWithHttpInfo($traffic_forecasting_request, $contentType)
+        return $this->createTrafficForecastAsyncWithHttpInfo($traffic_forecasting_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -307,20 +307,20 @@ class TrafficForecastingApi
     }
 
     /**
-     * Operation v2TrafficForecastingPostAsyncWithHttpInfo
+     * Operation createTrafficForecastAsyncWithHttpInfo
      *
      * Generate traffic forecasting with infrastructure scaling recommendations
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\TrafficForecastingRequest $traffic_forecasting_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2TrafficForecastingPost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\TrafficForecastingRequest $traffic_forecasting_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTrafficForecast'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2TrafficForecastingPostAsyncWithHttpInfo($traffic_forecasting_request, string $contentType = self::contentTypes['v2TrafficForecastingPost'][0])
+    public function createTrafficForecastAsyncWithHttpInfo($traffic_forecasting_request, string $contentType = self::contentTypes['createTrafficForecast'][0])
     {
-        $returnType = '\ForecastAPI\ForecastSDK\Model\TrafficForecastingResponse';
-        $request = $this->v2TrafficForecastingPostRequest($traffic_forecasting_request, $contentType);
+        $returnType = '\ForecastAPI\Sdk\Model\TrafficForecastingResponse';
+        $request = $this->createTrafficForecastRequest($traffic_forecasting_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -359,21 +359,21 @@ class TrafficForecastingApi
     }
 
     /**
-     * Create request for operation 'v2TrafficForecastingPost'
+     * Create request for operation 'createTrafficForecast'
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\TrafficForecastingRequest $traffic_forecasting_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2TrafficForecastingPost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\TrafficForecastingRequest $traffic_forecasting_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createTrafficForecast'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v2TrafficForecastingPostRequest($traffic_forecasting_request, string $contentType = self::contentTypes['v2TrafficForecastingPost'][0])
+    public function createTrafficForecastRequest($traffic_forecasting_request, string $contentType = self::contentTypes['createTrafficForecast'][0])
     {
 
         // verify the required parameter 'traffic_forecasting_request' is set
         if ($traffic_forecasting_request === null || (is_array($traffic_forecasting_request) && count($traffic_forecasting_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $traffic_forecasting_request when calling v2TrafficForecastingPost'
+                'Missing the required parameter $traffic_forecasting_request when calling createTrafficForecast'
             );
         }
 

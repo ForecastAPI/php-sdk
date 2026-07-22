@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,20 +26,20 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK;
+namespace ForecastAPI\Sdk;
 
 use ArrayAccess;
 use DateTime;
 use GuzzleHttp\Psr7\Utils;
 use Psr\Http\Message\StreamInterface;
 use SplFileObject;
-use ForecastAPI\ForecastSDK\Model\ModelInterface;
+use ForecastAPI\Sdk\Model\ModelInterface;
 
 /**
  * FormDataProcessor Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */

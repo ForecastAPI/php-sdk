@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **current_capacity** | **float** | Current infrastructure capacity | [optional]
-**utilization_periods** | [**\ForecastAPI\ForecastSDK\Model\TrafficForecastingResponseResultCapacityAnalysisUtilizationPeriodsInner[]**](TrafficForecastingResponseResultCapacityAnalysisUtilizationPeriodsInner.md) | Capacity utilization for each forecast period | [optional]
+**utilization_periods** | [**\ForecastAPI\Sdk\Model\TrafficForecastingResponseResultCapacityAnalysisUtilizationPeriodsInner[]**](TrafficForecastingResponseResultCapacityAnalysisUtilizationPeriodsInner.md) | Capacity utilization for each forecast period | [optional]
 **over_capacity_periods** | **int** | Number of periods exceeding capacity | [optional]
 **critical_periods** | **int** | Number of periods above 90% utilization | [optional]
 **forecast_duration_minutes** | **int** | Total forecast duration in minutes | [optional]

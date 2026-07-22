@@ -1,16 +1,16 @@
-# ForecastAPI\ForecastSDK\ForecastingApi
+# ForecastAPI\Sdk\ForecastingApi
 
 All URIs are relative to https://forecastapi.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**v2ForecastPost()**](ForecastingApi.md#v2ForecastPost) | **POST** /v2/forecast | Generate forecast for time series data |
+| [**createForecast()**](ForecastingApi.md#createForecast) | **POST** /v2/forecast | Generate forecast for time series data |
 
 
-## `v2ForecastPost()`
+## `createForecast()`
 
 ```php
-v2ForecastPost($forecast_request): \ForecastAPI\ForecastSDK\Model\ForecastResponse
+createForecast($forecast_request): \ForecastAPI\Sdk\Model\ForecastResponse
 ```
 
 Generate forecast for time series data
@@ -23,24 +23,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: apiKey
-$config = ForecastAPI\ForecastSDK\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+$config = ForecastAPI\Sdk\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = ForecastAPI\ForecastSDK\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+// $config = ForecastAPI\Sdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 
-$apiInstance = new ForecastAPI\ForecastSDK\Api\ForecastingApi(
+$apiInstance = new ForecastAPI\Sdk\Api\ForecastingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$forecast_request = new \ForecastAPI\ForecastSDK\Model\ForecastRequest(); // \ForecastAPI\ForecastSDK\Model\ForecastRequest
+$forecast_request = new \ForecastAPI\Sdk\Model\ForecastRequest(); // \ForecastAPI\Sdk\Model\ForecastRequest
 
 try {
-    $result = $apiInstance->v2ForecastPost($forecast_request);
+    $result = $apiInstance->createForecast($forecast_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ForecastingApi->v2ForecastPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ForecastingApi->createForecast: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -48,11 +48,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **forecast_request** | [**\ForecastAPI\ForecastSDK\Model\ForecastRequest**](../Model/ForecastRequest.md)|  | |
+| **forecast_request** | [**\ForecastAPI\Sdk\Model\ForecastRequest**](../Model/ForecastRequest.md)|  | |
 
 ### Return type
 
-[**\ForecastAPI\ForecastSDK\Model\ForecastResponse**](../Model/ForecastResponse.md)
+[**\ForecastAPI\Sdk\Model\ForecastResponse**](../Model/ForecastResponse.md)
 
 ### Authorization
 

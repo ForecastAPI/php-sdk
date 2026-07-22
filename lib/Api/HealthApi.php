@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Api;
+namespace ForecastAPI\Sdk\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use ForecastAPI\ForecastSDK\ApiException;
-use ForecastAPI\ForecastSDK\Configuration;
-use ForecastAPI\ForecastSDK\FormDataProcessor;
-use ForecastAPI\ForecastSDK\HeaderSelector;
-use ForecastAPI\ForecastSDK\ObjectSerializer;
+use ForecastAPI\Sdk\ApiException;
+use ForecastAPI\Sdk\Configuration;
+use ForecastAPI\Sdk\FormDataProcessor;
+use ForecastAPI\Sdk\HeaderSelector;
+use ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * HealthApi Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -75,10 +75,10 @@ class HealthApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'v2Get' => [
+        'getApiRoot' => [
             'application/json',
         ],
-        'v2HealthGet' => [
+        'healthCheck' => [
             'application/json',
         ],
     ];
@@ -130,36 +130,36 @@ class HealthApi
     }
 
     /**
-     * Operation v2Get
+     * Operation getApiRoot
      *
      * API root endpoint
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2Get'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiRoot'] to see the possible values for this operation
      *
-     * @throws \ForecastAPI\ForecastSDK\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \ForecastAPI\Sdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ForecastAPI\ForecastSDK\Model\V2Get200Response
+     * @return \ForecastAPI\Sdk\Model\GetApiRoot200Response
      */
-    public function v2Get(string $contentType = self::contentTypes['v2Get'][0])
+    public function getApiRoot(string $contentType = self::contentTypes['getApiRoot'][0])
     {
-        list($response) = $this->v2GetWithHttpInfo($contentType);
+        list($response) = $this->getApiRootWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation v2GetWithHttpInfo
+     * Operation getApiRootWithHttpInfo
      *
      * API root endpoint
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2Get'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiRoot'] to see the possible values for this operation
      *
-     * @throws \ForecastAPI\ForecastSDK\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \ForecastAPI\Sdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ForecastAPI\ForecastSDK\Model\V2Get200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ForecastAPI\Sdk\Model\GetApiRoot200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function v2GetWithHttpInfo(string $contentType = self::contentTypes['v2Get'][0])
+    public function getApiRootWithHttpInfo(string $contentType = self::contentTypes['getApiRoot'][0])
     {
-        $request = $this->v2GetRequest($contentType);
+        $request = $this->getApiRootRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -187,7 +187,7 @@ class HealthApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\V2Get200Response',
+                        '\ForecastAPI\Sdk\Model\GetApiRoot200Response',
                         $request,
                         $response,
                     );
@@ -209,7 +209,7 @@ class HealthApi
             }
 
             return $this->handleResponseWithDataType(
-                '\ForecastAPI\ForecastSDK\Model\V2Get200Response',
+                '\ForecastAPI\Sdk\Model\GetApiRoot200Response',
                 $request,
                 $response,
             );
@@ -218,7 +218,7 @@ class HealthApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\V2Get200Response',
+                        '\ForecastAPI\Sdk\Model\GetApiRoot200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -231,18 +231,18 @@ class HealthApi
     }
 
     /**
-     * Operation v2GetAsync
+     * Operation getApiRootAsync
      *
      * API root endpoint
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2Get'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiRoot'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2GetAsync(string $contentType = self::contentTypes['v2Get'][0])
+    public function getApiRootAsync(string $contentType = self::contentTypes['getApiRoot'][0])
     {
-        return $this->v2GetAsyncWithHttpInfo($contentType)
+        return $this->getApiRootAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -251,19 +251,19 @@ class HealthApi
     }
 
     /**
-     * Operation v2GetAsyncWithHttpInfo
+     * Operation getApiRootAsyncWithHttpInfo
      *
      * API root endpoint
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2Get'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiRoot'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2GetAsyncWithHttpInfo(string $contentType = self::contentTypes['v2Get'][0])
+    public function getApiRootAsyncWithHttpInfo(string $contentType = self::contentTypes['getApiRoot'][0])
     {
-        $returnType = '\ForecastAPI\ForecastSDK\Model\V2Get200Response';
-        $request = $this->v2GetRequest($contentType);
+        $returnType = '\ForecastAPI\Sdk\Model\GetApiRoot200Response';
+        $request = $this->getApiRootRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -302,14 +302,14 @@ class HealthApi
     }
 
     /**
-     * Create request for operation 'v2Get'
+     * Create request for operation 'getApiRoot'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2Get'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getApiRoot'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v2GetRequest(string $contentType = self::contentTypes['v2Get'][0])
+    public function getApiRootRequest(string $contentType = self::contentTypes['getApiRoot'][0])
     {
 
 
@@ -378,36 +378,36 @@ class HealthApi
     }
 
     /**
-     * Operation v2HealthGet
+     * Operation healthCheck
      *
      * Health check endpoint
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2HealthGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['healthCheck'] to see the possible values for this operation
      *
-     * @throws \ForecastAPI\ForecastSDK\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \ForecastAPI\Sdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ForecastAPI\ForecastSDK\Model\V2HealthGet200Response
+     * @return \ForecastAPI\Sdk\Model\HealthCheck200Response
      */
-    public function v2HealthGet(string $contentType = self::contentTypes['v2HealthGet'][0])
+    public function healthCheck(string $contentType = self::contentTypes['healthCheck'][0])
     {
-        list($response) = $this->v2HealthGetWithHttpInfo($contentType);
+        list($response) = $this->healthCheckWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation v2HealthGetWithHttpInfo
+     * Operation healthCheckWithHttpInfo
      *
      * Health check endpoint
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2HealthGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['healthCheck'] to see the possible values for this operation
      *
-     * @throws \ForecastAPI\ForecastSDK\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \ForecastAPI\Sdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ForecastAPI\ForecastSDK\Model\V2HealthGet200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ForecastAPI\Sdk\Model\HealthCheck200Response, HTTP status code, HTTP response headers (array of strings)
      */
-    public function v2HealthGetWithHttpInfo(string $contentType = self::contentTypes['v2HealthGet'][0])
+    public function healthCheckWithHttpInfo(string $contentType = self::contentTypes['healthCheck'][0])
     {
-        $request = $this->v2HealthGetRequest($contentType);
+        $request = $this->healthCheckRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -435,7 +435,7 @@ class HealthApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\V2HealthGet200Response',
+                        '\ForecastAPI\Sdk\Model\HealthCheck200Response',
                         $request,
                         $response,
                     );
@@ -457,7 +457,7 @@ class HealthApi
             }
 
             return $this->handleResponseWithDataType(
-                '\ForecastAPI\ForecastSDK\Model\V2HealthGet200Response',
+                '\ForecastAPI\Sdk\Model\HealthCheck200Response',
                 $request,
                 $response,
             );
@@ -466,7 +466,7 @@ class HealthApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\V2HealthGet200Response',
+                        '\ForecastAPI\Sdk\Model\HealthCheck200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -479,18 +479,18 @@ class HealthApi
     }
 
     /**
-     * Operation v2HealthGetAsync
+     * Operation healthCheckAsync
      *
      * Health check endpoint
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2HealthGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['healthCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2HealthGetAsync(string $contentType = self::contentTypes['v2HealthGet'][0])
+    public function healthCheckAsync(string $contentType = self::contentTypes['healthCheck'][0])
     {
-        return $this->v2HealthGetAsyncWithHttpInfo($contentType)
+        return $this->healthCheckAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -499,19 +499,19 @@ class HealthApi
     }
 
     /**
-     * Operation v2HealthGetAsyncWithHttpInfo
+     * Operation healthCheckAsyncWithHttpInfo
      *
      * Health check endpoint
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2HealthGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['healthCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2HealthGetAsyncWithHttpInfo(string $contentType = self::contentTypes['v2HealthGet'][0])
+    public function healthCheckAsyncWithHttpInfo(string $contentType = self::contentTypes['healthCheck'][0])
     {
-        $returnType = '\ForecastAPI\ForecastSDK\Model\V2HealthGet200Response';
-        $request = $this->v2HealthGetRequest($contentType);
+        $returnType = '\ForecastAPI\Sdk\Model\HealthCheck200Response';
+        $request = $this->healthCheckRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -550,14 +550,14 @@ class HealthApi
     }
 
     /**
-     * Create request for operation 'v2HealthGet'
+     * Create request for operation 'healthCheck'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2HealthGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['healthCheck'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v2HealthGetRequest(string $contentType = self::contentTypes['v2HealthGet'][0])
+    public function healthCheckRequest(string $contentType = self::contentTypes['healthCheck'][0])
     {
 
 

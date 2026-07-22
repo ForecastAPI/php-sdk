@@ -1,17 +1,17 @@
-# ForecastAPI\ForecastSDK\HealthApi
+# ForecastAPI\Sdk\HealthApi
 
 All URIs are relative to https://forecastapi.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**v2Get()**](HealthApi.md#v2Get) | **GET** /v2 | API root endpoint |
-| [**v2HealthGet()**](HealthApi.md#v2HealthGet) | **GET** /v2/health | Health check endpoint |
+| [**getApiRoot()**](HealthApi.md#getApiRoot) | **GET** /v2 | API root endpoint |
+| [**healthCheck()**](HealthApi.md#healthCheck) | **GET** /v2/health | Health check endpoint |
 
 
-## `v2Get()`
+## `getApiRoot()`
 
 ```php
-v2Get(): \ForecastAPI\ForecastSDK\Model\V2Get200Response
+getApiRoot(): \ForecastAPI\Sdk\Model\GetApiRoot200Response
 ```
 
 API root endpoint
@@ -24,17 +24,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new ForecastAPI\ForecastSDK\Api\HealthApi(
+$apiInstance = new ForecastAPI\Sdk\Api\HealthApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 
 try {
-    $result = $apiInstance->v2Get();
+    $result = $apiInstance->getApiRoot();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HealthApi->v2Get: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HealthApi->getApiRoot: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -44,7 +44,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\ForecastAPI\ForecastSDK\Model\V2Get200Response**](../Model/V2Get200Response.md)
+[**\ForecastAPI\Sdk\Model\GetApiRoot200Response**](../Model/GetApiRoot200Response.md)
 
 ### Authorization
 
@@ -59,10 +59,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `v2HealthGet()`
+## `healthCheck()`
 
 ```php
-v2HealthGet(): \ForecastAPI\ForecastSDK\Model\V2HealthGet200Response
+healthCheck(): \ForecastAPI\Sdk\Model\HealthCheck200Response
 ```
 
 Health check endpoint
@@ -75,17 +75,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-$apiInstance = new ForecastAPI\ForecastSDK\Api\HealthApi(
+$apiInstance = new ForecastAPI\Sdk\Api\HealthApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 
 try {
-    $result = $apiInstance->v2HealthGet();
+    $result = $apiInstance->healthCheck();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HealthApi->v2HealthGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HealthApi->healthCheck: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -95,7 +95,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\ForecastAPI\ForecastSDK\Model\V2HealthGet200Response**](../Model/V2HealthGet200Response.md)
+[**\ForecastAPI\Sdk\Model\HealthCheck200Response**](../Model/HealthCheck200Response.md)
 
 ### Authorization
 

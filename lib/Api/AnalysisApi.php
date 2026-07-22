@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK\Api;
+namespace ForecastAPI\Sdk\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -37,17 +37,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use ForecastAPI\ForecastSDK\ApiException;
-use ForecastAPI\ForecastSDK\Configuration;
-use ForecastAPI\ForecastSDK\FormDataProcessor;
-use ForecastAPI\ForecastSDK\HeaderSelector;
-use ForecastAPI\ForecastSDK\ObjectSerializer;
+use ForecastAPI\Sdk\ApiException;
+use ForecastAPI\Sdk\Configuration;
+use ForecastAPI\Sdk\FormDataProcessor;
+use ForecastAPI\Sdk\HeaderSelector;
+use ForecastAPI\Sdk\ObjectSerializer;
 
 /**
  * AnalysisApi Class Doc Comment
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -75,7 +75,7 @@ class AnalysisApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'v2AnalyzePost' => [
+        'analyzeTimeSeries' => [
             'application/json',
         ],
     ];
@@ -127,38 +127,38 @@ class AnalysisApi
     }
 
     /**
-     * Operation v2AnalyzePost
+     * Operation analyzeTimeSeries
      *
      * Analyze time series data without generating forecast
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\ForecastRequest $forecast_request forecast_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2AnalyzePost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\ForecastRequest $forecast_request forecast_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeTimeSeries'] to see the possible values for this operation
      *
-     * @throws \ForecastAPI\ForecastSDK\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \ForecastAPI\Sdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \ForecastAPI\ForecastSDK\Model\AnalysisResponse|\ForecastAPI\ForecastSDK\Model\ErrorResponse|\ForecastAPI\ForecastSDK\Model\ValidationErrorResponse
+     * @return \ForecastAPI\Sdk\Model\AnalysisResponse|\ForecastAPI\Sdk\Model\ErrorResponse|\ForecastAPI\Sdk\Model\ValidationErrorResponse
      */
-    public function v2AnalyzePost($forecast_request, string $contentType = self::contentTypes['v2AnalyzePost'][0])
+    public function analyzeTimeSeries($forecast_request, string $contentType = self::contentTypes['analyzeTimeSeries'][0])
     {
-        list($response) = $this->v2AnalyzePostWithHttpInfo($forecast_request, $contentType);
+        list($response) = $this->analyzeTimeSeriesWithHttpInfo($forecast_request, $contentType);
         return $response;
     }
 
     /**
-     * Operation v2AnalyzePostWithHttpInfo
+     * Operation analyzeTimeSeriesWithHttpInfo
      *
      * Analyze time series data without generating forecast
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\ForecastRequest $forecast_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2AnalyzePost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\ForecastRequest $forecast_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeTimeSeries'] to see the possible values for this operation
      *
-     * @throws \ForecastAPI\ForecastSDK\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \ForecastAPI\Sdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \ForecastAPI\ForecastSDK\Model\AnalysisResponse|\ForecastAPI\ForecastSDK\Model\ErrorResponse|\ForecastAPI\ForecastSDK\Model\ValidationErrorResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ForecastAPI\Sdk\Model\AnalysisResponse|\ForecastAPI\Sdk\Model\ErrorResponse|\ForecastAPI\Sdk\Model\ValidationErrorResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function v2AnalyzePostWithHttpInfo($forecast_request, string $contentType = self::contentTypes['v2AnalyzePost'][0])
+    public function analyzeTimeSeriesWithHttpInfo($forecast_request, string $contentType = self::contentTypes['analyzeTimeSeries'][0])
     {
-        $request = $this->v2AnalyzePostRequest($forecast_request, $contentType);
+        $request = $this->analyzeTimeSeriesRequest($forecast_request, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -186,19 +186,19 @@ class AnalysisApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\AnalysisResponse',
+                        '\ForecastAPI\Sdk\Model\AnalysisResponse',
                         $request,
                         $response,
                     );
                 case 401:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\ErrorResponse',
+                        '\ForecastAPI\Sdk\Model\ErrorResponse',
                         $request,
                         $response,
                     );
                 case 422:
                     return $this->handleResponseWithDataType(
-                        '\ForecastAPI\ForecastSDK\Model\ValidationErrorResponse',
+                        '\ForecastAPI\Sdk\Model\ValidationErrorResponse',
                         $request,
                         $response,
                     );
@@ -220,7 +220,7 @@ class AnalysisApi
             }
 
             return $this->handleResponseWithDataType(
-                '\ForecastAPI\ForecastSDK\Model\AnalysisResponse',
+                '\ForecastAPI\Sdk\Model\AnalysisResponse',
                 $request,
                 $response,
             );
@@ -229,7 +229,7 @@ class AnalysisApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\AnalysisResponse',
+                        '\ForecastAPI\Sdk\Model\AnalysisResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -237,7 +237,7 @@ class AnalysisApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\ErrorResponse',
+                        '\ForecastAPI\Sdk\Model\ErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -245,7 +245,7 @@ class AnalysisApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ForecastAPI\ForecastSDK\Model\ValidationErrorResponse',
+                        '\ForecastAPI\Sdk\Model\ValidationErrorResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -258,19 +258,19 @@ class AnalysisApi
     }
 
     /**
-     * Operation v2AnalyzePostAsync
+     * Operation analyzeTimeSeriesAsync
      *
      * Analyze time series data without generating forecast
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\ForecastRequest $forecast_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2AnalyzePost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\ForecastRequest $forecast_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeTimeSeries'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2AnalyzePostAsync($forecast_request, string $contentType = self::contentTypes['v2AnalyzePost'][0])
+    public function analyzeTimeSeriesAsync($forecast_request, string $contentType = self::contentTypes['analyzeTimeSeries'][0])
     {
-        return $this->v2AnalyzePostAsyncWithHttpInfo($forecast_request, $contentType)
+        return $this->analyzeTimeSeriesAsyncWithHttpInfo($forecast_request, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -279,20 +279,20 @@ class AnalysisApi
     }
 
     /**
-     * Operation v2AnalyzePostAsyncWithHttpInfo
+     * Operation analyzeTimeSeriesAsyncWithHttpInfo
      *
      * Analyze time series data without generating forecast
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\ForecastRequest $forecast_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2AnalyzePost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\ForecastRequest $forecast_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeTimeSeries'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2AnalyzePostAsyncWithHttpInfo($forecast_request, string $contentType = self::contentTypes['v2AnalyzePost'][0])
+    public function analyzeTimeSeriesAsyncWithHttpInfo($forecast_request, string $contentType = self::contentTypes['analyzeTimeSeries'][0])
     {
-        $returnType = '\ForecastAPI\ForecastSDK\Model\AnalysisResponse';
-        $request = $this->v2AnalyzePostRequest($forecast_request, $contentType);
+        $returnType = '\ForecastAPI\Sdk\Model\AnalysisResponse';
+        $request = $this->analyzeTimeSeriesRequest($forecast_request, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -331,21 +331,21 @@ class AnalysisApi
     }
 
     /**
-     * Create request for operation 'v2AnalyzePost'
+     * Create request for operation 'analyzeTimeSeries'
      *
-     * @param  \ForecastAPI\ForecastSDK\Model\ForecastRequest $forecast_request (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2AnalyzePost'] to see the possible values for this operation
+     * @param  \ForecastAPI\Sdk\Model\ForecastRequest $forecast_request (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeTimeSeries'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v2AnalyzePostRequest($forecast_request, string $contentType = self::contentTypes['v2AnalyzePost'][0])
+    public function analyzeTimeSeriesRequest($forecast_request, string $contentType = self::contentTypes['analyzeTimeSeries'][0])
     {
 
         // verify the required parameter 'forecast_request' is set
         if ($forecast_request === null || (is_array($forecast_request) && count($forecast_request) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $forecast_request when calling v2AnalyzePost'
+                'Missing the required parameter $forecast_request when calling analyzeTimeSeries'
             );
         }
 

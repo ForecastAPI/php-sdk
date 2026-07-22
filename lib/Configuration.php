@@ -4,7 +4,7 @@
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,14 +26,14 @@
  * Do not edit the class manually.
  */
 
-namespace ForecastAPI\ForecastSDK;
+namespace ForecastAPI\Sdk;
 
 /**
  * Configuration Class Doc Comment
  * PHP version 8.1
  *
  * @category Class
- * @package  ForecastAPI\ForecastSDK
+ * @package  ForecastAPI\Sdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -101,7 +101,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'OpenAPI-Generator/1.0.7/PHP';
+    protected $userAgent = 'OpenAPI-Generator/1.0.0/PHP';
 
     /**
      * Debug switch (default set to false)
@@ -430,11 +430,10 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (ForecastAPI\ForecastSDK) Debug Report:' . PHP_EOL;
+        $report  = 'PHP SDK (ForecastAPI\Sdk) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    The version of the OpenAPI document: 2.0.0' . PHP_EOL;
-        $report .= '    SDK Package Version: 1.0.7' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
