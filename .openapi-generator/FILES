@@ -34,6 +34,8 @@ docs/Model/AnomalyDetectionResponseResult.md
 docs/Model/AnomalyDetectionResponseResultAnalysis.md
 docs/Model/AnomalyDetectionResponseResultAnalysisDetectionSummary.md
 docs/Model/AnomalyDetectionResponseResultAnomaliesInner.md
+docs/Model/AutoSelection.md
+docs/Model/AutoSelectionScoresValue.md
 docs/Model/BatchForecastAccepted.md
 docs/Model/BatchForecastRequest.md
 docs/Model/BatchForecastSeries.md
@@ -160,6 +162,8 @@ lib/Model/AnomalyDetectionResponseResult.php
 lib/Model/AnomalyDetectionResponseResultAnalysis.php
 lib/Model/AnomalyDetectionResponseResultAnalysisDetectionSummary.php
 lib/Model/AnomalyDetectionResponseResultAnomaliesInner.php
+lib/Model/AutoSelection.php
+lib/Model/AutoSelectionScoresValue.php
 lib/Model/BatchForecastAccepted.php
 lib/Model/BatchForecastRequest.php
 lib/Model/BatchForecastSeries.php
@@ -284,6 +288,8 @@ test/Model/AnomalyDetectionResponseResultAnalysisTest.php
 test/Model/AnomalyDetectionResponseResultAnomaliesInnerTest.php
 test/Model/AnomalyDetectionResponseResultTest.php
 test/Model/AnomalyDetectionResponseTest.php
+test/Model/AutoSelectionScoresValueTest.php
+test/Model/AutoSelectionTest.php
 test/Model/BatchForecastAcceptedTest.php
 test/Model/BatchForecastRequestTest.php
 test/Model/BatchForecastSeriesDataInnerTest.php
